@@ -243,13 +243,13 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
 #                   <i class="fa-solid fa-copyright fa-fw"></i>
 #                   2017-2022 WuK
 #                 </div>
-              # - | # 我的备案信息，请你的网站删掉这一项。互联网非法外之地！
-              #   <div>
-              #     <i class="fa-solid fa-info-circle fa-fw"></i>
-              #     <a href="http://beian.miit.gov.cn">
-              #       粤ICP备 20024947号
-              #     </a>
-              #   </div>
+              - | # 我的备案信息，请你的网站删掉这一项。互联网非法外之地！
+                <div>
+                  <i class="fa-solid fa-info-circle fa-fw"></i>
+                  <a href="http://beian.miit.gov.cn">
+                    鲁ICP备19026057号
+                  </a>
+                </div>
               # - | # 公安网备信息
               #   <div>
               #     <img src="https://cdn.jsdelivr.net/gh/wu-kan/blog-image/2021/12/07/0.png" class="fa-fw"></img>
