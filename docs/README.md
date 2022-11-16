@@ -7,6 +7,6 @@ Kill my way to heaven!\
 <!-- .slide -->
 
 ## Contact
-  -**Wechat:yesky_yksey**
-  -**Email:a316606581@gmail.com**
+  -**Wechat:  yesky_yksey**\
+  -**Email: a316606581@gmail.com**
 <!-- .slide -->
