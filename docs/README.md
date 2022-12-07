@@ -9,4 +9,3 @@ Kill my way to heaven!\
 ## Contact
   -**Wechat:  yesky_yksey**\
   -**Email: a316606581@gmail.com**
-<!-- .slide -->
