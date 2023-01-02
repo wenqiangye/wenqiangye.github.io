@@ -1,0 +1,42 @@
+# 套接字类型与协议设置
+
+`
+
+#include <sys/socket.h>
+
+int socket(int domain,int type,int protocol);
+
+\# domain 套接字中使用的协议族（protocol family）信息
+
+\# type 套接字数据传输类型的信息
+
+\# protocol 计算机间通信中使用的协议信息
+
+`
+
+## 一、协议族
+
+| 名称     | 协议族           |
+| -------- | ---------------- |
+| PF_INET  | IPv4互联网协议族 |
+| PF_INET6 | IPv6互联网协议族                 |
+|  PF_LOCAL   | 本地通信的UNIX协议族 |
+| PF_PACKET | 底层套接字的协议族 |
+| PF_IPX | IPX Novell协议族 |
+
+最终协议是通过第三个参数传递的
+
+## 二、套接字类型
+
+指套接字的数据传输方式。
+
+1. 面向连接的套接字（SOCK_STREAM）：（IPv4中为IPPROTO_TCP）
+
+   ​	可靠的，按序传递的，基于字节的面向连接的数据传输方式的套接字
+
+2.  向消息的套接字（SOCK_DGRAM） ：（IPv4中为IPPPROTO_UDP）
+
+   ​	不可靠的，不按序传递的，以数据的高速传输为目的的套接字
+
+同一协议族中存在多个数据传输方式相同的协议。所以需要第三个参数指定具体的协议信息。
+
