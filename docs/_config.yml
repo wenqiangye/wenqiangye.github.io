@@ -250,13 +250,6 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                     鲁ICP备19026057号
                   </a>
                 </div>
-              # - | # 公安网备信息
-              #   <div>
-              #     <img src="https://cdn.jsdelivr.net/gh/wu-kan/blog-image/2021/12/07/0.png" class="fa-fw"></img>
-              #     <a href="http://www.beian.gov.cn/portal/registerSystemInfo?recordcode=34070202000407">
-              #       皖公网安备 34070202000407号
-              #     </a>
-              #   </div>
             wordcount: # 全站字数统计
               enable: false # 本地调试时建议关闭，非常影响站点生成速度（所需时间与博文数量的平方成正比）
               prepend: <i class="fa-solid fa-user-edit fa-fw"></i>
@@ -291,7 +284,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
             - | # 网站小图标，可换成你自己的图片，改href中的部分即可
               <link
                 rel="apple-touch-icon-precomposed"
-                href="https://gravatar.loli.net/avatar/289efba375d63424de3c49569c446744?s=320"
+                href="https://cdn.jsdelivr.net/gh//wenqiangye/yesky_image/img/20250418112754.jpg"
               />
               <link
                 rel="shortcut
@@ -650,7 +643,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
             - | # 需要配置的变量见<https://merger.justhx.com/cn/docs/configure>
               <script>
                 var myname = "yesky";
-                var profile = "i@wu-kan.cn";
+                var profile = "i@skyleaf.cn";
                 var usage = "payment";
                 var wechat = "wxp://f2f0BhUoIC_9gex7-tC2PRvVuoA486mK5WyC";
                 var tenpay = "https://i.qianbao.qq.com/wallet/sqrcode.htm?m=tenpay&f=wallet&a=1&ac=CAEQ77zFwQMY-6u57gU%3D_xxx_sign&u=942759535&n=%E8%94%9A";
