@@ -28,7 +28,7 @@
 -**主要功能：**
 <span style="font-size: 30px; bold;">参考图像引导上色；</span>\
 <span style="font-size: 30px; bold;">参考图像与用户涂鸦共同引导上色；</span>\
-<span style="font-size: 30px; bold;">用户涂鸦。</span>\
+<span style="font-size: 30px; bold;">用户涂鸦。</span>
 
 -**辅助功能：**
 <span style="font-size: 30px; bold;">图像超分和图像背景去除。</span>\
