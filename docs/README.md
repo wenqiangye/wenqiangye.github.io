@@ -23,7 +23,7 @@
 <!-- .slide -->
 ## Personal Projects
 
-### 基于Gradio框架的多引导线稿艺术上色系统
+<h3> 基于Gradio框架的多引导线稿艺术上色系统</h3>
 
 -**主要功能：**
 <span style="font-size: 30px; bold;">参考图像引导上色；</span>\
