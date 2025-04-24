@@ -29,7 +29,8 @@
 参考图像与用户涂鸦共同引导上色；\
 用户涂鸦。**\
 -**辅助功能：图像超分和图像背景去除。**\
--**项目链接：https://github.com/wenqiangye/MultiGuide_LAC_WEBUI**
+-**项目链接:**
+<span style="font-size: 24px;">https://github.com/wenqiangye/MultiGuide_LAC_WEBUI<\span>
 
 <video width="1080" controls>
   <source src="example.mp4" type="video/mp4">
