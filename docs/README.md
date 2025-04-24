@@ -25,12 +25,12 @@
 
 ### 基于Gradio框架的多引导线稿艺术上色系统
 
--**主要功能：参考图像引导上色；\
-参考图像与用户涂鸦共同引导上色；\
-用户涂鸦。**\
--**辅助功能：图像超分和图像背景去除。**\
--**项目链接:**
-<span style="font-size: 24px;">https://github.com/wenqiangye/MultiGuide_LAC_WEBUI<\span>
+-**主要功能：**
+<span style="font-size: 30px; bold;">参考图像引导上色；参考图像与用户涂鸦共同引导上色；用户涂鸦。</span>\
+-**辅助功能：**
+<span style="font-size: 30px; bold;">图像超分和图像背景去除。</span>\
+-**项目链接：**
+<span style="font-size: 30px; bold;">https://github.com/wenqiangye/MultiGuide_LAC_WEBUI</span>
 
 <video width="1080" controls>
   <source src="example.mp4" type="video/mp4">
