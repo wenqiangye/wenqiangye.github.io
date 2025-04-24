@@ -20,4 +20,5 @@
 -**Shanghai University | Shanghai, China**\
 -**Expected Graduation: 2025**\
 
+<!-- .slide -->
 ## Person Project
