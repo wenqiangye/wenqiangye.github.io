@@ -21,4 +21,9 @@
   -**GitHub: https://github.com/wenqiangye**
 
 <!-- .slide -->
-## Person Project
+## Personal Projects
+
+<video width="600" controls>
+  <source src="example.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
