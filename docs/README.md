@@ -27,7 +27,8 @@
 
 -**线稿图上色系统：支持参考图像引导上色和参考图像与用户涂鸦共同引导上色。**\
 -**辅助功能：图像超分和图像背景去除。**\
--**具体操作如视频所示。**
+-**具体操作如视频所示。**\
+-**项目链接：https://github.com/wenqiangye/MultiGuide_LAC_WEBUI**
 
 <video width="1080" controls>
   <source src="example.mp4" type="video/mp4">
