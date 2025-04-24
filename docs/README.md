@@ -25,7 +25,7 @@
 
 <h4> 基于Gradio框架的多引导线稿艺术上色系统</h4>
 
-<h5>-**主要功能：**</h5>
+-**主要功能：**\
 <span style="font-size: 30px; bold;">参考图像引导上色；</span>\
 <span style="font-size: 30px; bold;">参考图像与用户涂鸦共同引导上色；</span>\
 <span style="font-size: 30px; bold;">用户涂鸦。</span>
