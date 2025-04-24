@@ -13,9 +13,9 @@
 ## Education 
 
 -**Bachelor of Software Engineering
-China University of Petroleum (East China) | Qingdao, China
-Expected Graduation: 2022**
+-China University of Petroleum (East China) | Qingdao, China
+-Expected Graduation: 2022**
 
 -**Master of Electronic Information
-Shanghai University | Shanghai, China
-Expected Graduation: 2025**
+-Shanghai University | Shanghai, China
+-Expected Graduation: 2025**
