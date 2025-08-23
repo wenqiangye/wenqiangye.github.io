@@ -116,7 +116,7 @@ public class HelloController {
 
 - 从URI路径中提取参数值，将其映射到方法的参数上
 
-```JAVA
+```java
 @RestController
 public class MyRestController {
     @GetMapping("/users/{userId}")
@@ -132,7 +132,7 @@ public class MyRestController {
 
 -  用于从请求中获取参数的值
 
-```JAVA
+```java
 @RestController
 public class MyRestController {
     @GetMapping("/users")
