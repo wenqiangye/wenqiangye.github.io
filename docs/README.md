@@ -1,7 +1,6 @@
 # yesky's blog
 
 - 前途似海，来日方长!
-
 - 人生路漫漫，不妨坐下来喝杯咖啡吧！
 - 欢迎访问我的主页！下面向你介绍一下我吧~
 
@@ -9,13 +8,12 @@
 
 ## Education
 
-- **Bachelor**
+<h4> Bachelor</h4>
 
 	`<span style="font-size: 30px; bold;">`Bachelor of Software Engineering
-
 	`<span style="font-size: 30px; bold;">`China University of Petroleum (East China) | Qingdao, China
 	`<span style="font-size: 30px; bold;">`Expected Graduation: 2022
-- **Master**
+<h4>Master</h4>
 
 	`<span style="font-size: 30px; bold;">`Master of Electronic Information
 	`<span style="font-size: 30px; bold;">`Shanghai University | Shanghai, China
