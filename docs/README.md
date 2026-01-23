@@ -12,7 +12,7 @@
 * **China University of Petroleum (East China) | Qingdao, China**
 * **Expected Graduation: 2022**
 * **Master of Electronic Information**
-* **Shanghai University | Shanghai, China**
+* **S****hanghai University | Shanghai, China**
 * **Expected Graduation: 2025**
 
 ## Contact
