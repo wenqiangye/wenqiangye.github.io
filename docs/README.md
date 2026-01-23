@@ -4,7 +4,7 @@
 人生路漫漫，不妨坐下来喝杯咖啡吧！
 欢迎访问我的主页！下面向你介绍一下我吧\~
 
-<!-- .slide ->
+<!-- .slide -->
 
 ## Education
 
@@ -23,7 +23,7 @@
 
 <!-- .slide -->
 
-### Personal Projects
+## Personal Projects
 
 <h4> 基于Gradio框架的多引导线稿艺术上色系统</h4>
 
@@ -43,4 +43,4 @@
 
 <!-- .slide -->
 
-### Personal Projects
+## Personal Projects
