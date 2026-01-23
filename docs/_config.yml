@@ -43,7 +43,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
             sidebar-overlay: true # 开启后正文不随sidebar移动而移动
           html_lang: zh # <https://www.w3school.com.cn/tags/html_ref_language_codes.asp>
           sidebar: # 此配置项下是一些关于侧边栏的配置
-            disable: true # 是否不显示sidebar
+            disable: false # 是否不显示sidebar
             avatar: # 侧边栏显示的头像
               enable: true
               img: https://cdn.jsdelivr.net/gh//wenqiangye/yesky_image/img/20250418112754.jpg # 头像的地址
@@ -132,11 +132,9 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
               - | # 修复侧边栏特定情况下抖动的问题，感谢 [@AmachiInori](https://github.com/wu-kan/wu-kan.github.io/issues/11)
                 <style>
                   .sidebar {
-                    overflow: hidden;
-                    min-height: 101%;
-                  }
-                  .sidebar:hover{
-                    overflow-y: scroll; 
+                    overflow-y: auto;
+                    overflow-x: hidden;
+                    min-height: 109%;
                   }
                 </style>
               - | # 侧边栏头像效果
