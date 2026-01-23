@@ -134,7 +134,7 @@ defaults: # 将所有配置选项使用<https://jekyllrb.com/docs/configuration/
                   .sidebar {
                     overflow-y: auto;
                     overflow-x: hidden;
-                    min-height: 109%;
+                    min-height: 100%;
                   }
                 </style>
               - | # 侧边栏头像效果
