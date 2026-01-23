@@ -10,14 +10,15 @@
 
 <h4> Bachelor</h4>
 
-`<span style="font-size: 30px; bold;">`Bachelor of Software Engineering
-`<span style="font-size: 30px; bold;">`China University of Petroleum (East China) | Qingdao, China
-`<span style="font-size: 30px; bold;">`Expected Graduation: 2022
+- `<span style="font-size: 30px; bold;">`Bachelor of Software Engineering
+- `<span style="font-size: 30px; bold;">`China University of Petroleum (East China) | Qingdao, China
+- `<span style="font-size: 30px; bold;">`Expected Graduation: 2022
+
 <h4>Master</h4>
 
-`<span style="font-size: 30px; bold;">`Master of Electronic Information
-`<span style="font-size: 30px; bold;">`Shanghai University | Shanghai, China
-`<span style="font-size: 30px; bold;">`Expected Graduation: 2025
+- `<span style="font-size: 30px; bold;">`Master of Electronic Information
+- `<span style="font-size: 30px; bold;">`Shanghai University | Shanghai, China
+- `<span style="font-size: 30px; bold;">`Expected Graduation: 2025
 
 ## Contact
 
