@@ -10,15 +10,15 @@
 
 <h4> Bachelor</h4>
 
-- **Bachelor of Software Engineering**
-- **China University of Petroleum (East China) | Qingdao, China**
-- **Expected Graduation: 2022**
+- Bachelor of Software Engineering
+- China University of Petroleum (East China) | Qingdao, China
+- Expected Graduation: 2022
 
 <h4>Master</h4>
 
-- **Master of Electronic Information**
-- **Shanghai University | Shanghai, China**
-- **Expected Graduation: 2025**
+- Master of Electronic Information
+- Shanghai University | Shanghai, China
+- Expected Graduation: 2025
 
 ## Contact
 
