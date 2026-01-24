@@ -10,15 +10,15 @@
 
 <h4> Bachelor</h4>
 
-- `<span style="font-size: 30px; bold;">`Bachelor of Software Engineering
-- `<span style="font-size: 30px; bold;">`China University of Petroleum (East China) | Qingdao, China
-- `<span style="font-size: 30px; bold;">`Expected Graduation: 2022
+- **Bachelor of Software Engineering**
+- **China University of Petroleum (East China) | Qingdao, China**
+- **Expected Graduation: 2022**
 
 <h4>Master</h4>
 
-- `<span style="font-size: 30px; bold;">`Master of Electronic Information
-- `<span style="font-size: 30px; bold;">`Shanghai University | Shanghai, China
-- `<span style="font-size: 30px; bold;">`Expected Graduation: 2025
+- **Master of Electronic Information**
+- **Shanghai University | Shanghai, China**
+- **Expected Graduation: 2025**
 
 ## Contact
 
@@ -32,14 +32,19 @@
 
 <h4> 基于Gradio框架的多引导线稿艺术上色系统</h4>
 
-* **主要功能：**
-  `<span style="font-size: 30px; bold;">`参考图像引导上色；
-  `<span style="font-size: 30px; bold;">`参考图像与用户涂鸦共同引导上色；
-  `<span style="font-size: 30px; bold;">`用户涂鸦。
-* **辅助功能：**
-  `<span style="font-size: 30px; bold;">`图像超分和图像背景去除。
-* **项目链接：**
-  `<span style="font-size: 30px; bold;">`https://github.com/wenqiangye/MultiGuide_LAC_WEBUI
+**主要功能：**
+
+- 参考图像引导上色；
+- 参考图像与用户涂鸦共同引导上色；
+- 用户涂鸦。
+
+**辅助功能：**
+
+- 图像超分和图像背景去除。
+
+**项目链接：**
+
+- https://github.com/wenqiangye/MultiGuide_LAC_WEBUI
 
 <video width="1080" controls>
   <source src="example.mp4" type="video/mp4">
