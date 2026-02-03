@@ -208,12 +208,12 @@
     align-items: center;
 
     li {
-      display: table-cell;
-      vertical-align: middle;
+      display: flex;
+      align-items: center;
 
       &:first-child {
-        font-weight: bold;
-        text-wrap: wrap;
+        flex: 0 0 auto;
+        text-align: left;
 
         a {
           margin-left: 0;
