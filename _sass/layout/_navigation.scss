@@ -203,17 +203,15 @@
   }
 
   .visible-links {
-    display: flex;          // 覆盖 table
-    width: 75%;
-    align-items: center;
+    display: table;
 
     li {
-      display: flex;
-      align-items: center;
+      display: table-cell;
+      vertical-align: middle;
 
       &:first-child {
-        flex: 0 0 auto;
-        text-align: left;
+        font-weight: bold;
+        text-wrap: wrap;
 
         a {
           margin-left: 0;
@@ -229,7 +227,7 @@
 
     #theme-toggle {
       a {
-        width: 25px;
+        width: 100px;
         display: flex;
         justify-content: center;
         cursor: pointer;
