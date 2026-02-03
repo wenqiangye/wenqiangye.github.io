@@ -24,8 +24,6 @@ USER vscode
 # Copy Gemfile into the container (necessary for `bundle install`)
 COPY Gemfile ./
 
-RUN gem sources --add https://gems.ruby-china.com/ --remove https://rubygems.org/
-RUN bundle config mirror.https://rubygems.org https://gems.ruby-china.com
 
 
 # Install bundler and dependencies
@@ -34,4 +32,4 @@ RUN gem install bundler:2.3.26
 RUN bundle install
 
 # Command to serve the Jekyll site
-CMD ["jekyll", "serve", "-H", "127.0.0.1", "-w", "--config", "_config.yml,_config_docker.yml"]
+CMD ["jekyll", "serve", "-H", "0.0.0.0", "-w", "--config", "_config.yml,_config_docker.yml"]
