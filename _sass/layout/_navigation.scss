@@ -203,7 +203,7 @@
   }
 
   .visible-links {
-    display: table;
+    display: flex;
 
     li {
       display: table-cell;
@@ -235,6 +235,7 @@
     }
 
     a {
+      display: block;
       position: relative;
 
       &:before {
