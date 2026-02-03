@@ -28,6 +28,9 @@ main:
     
   - title: "CV"
     url: /cv/
+
+  - title: "Friendly Links"
+    url: /friendly-links/
     
   # - title: "CV"
   #   url: /cv-json/
