@@ -206,8 +206,9 @@
     display: table;
 
     li {
-      display: table-cell;
-      vertical-align: middle;
+      display: flex;
+      width: 100%;
+      align-items: center;
 
       &:first-child {
         font-weight: bold;
@@ -227,7 +228,7 @@
 
     #theme-toggle {
       a {
-        width: 100px;
+        width: 25px;
         display: flex;
         justify-content: center;
         cursor: pointer;
