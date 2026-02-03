@@ -204,39 +204,52 @@
 
   .visible-links {
     display: flex;
+    width: 100%;
+    align-items: center;
 
+    /* li 作为 flex item */
     li {
-      display: table-cell;
-      vertical-align: middle;
+      display: block;       // ✅ 不要再用 flex
+      flex: 1 1 0;          // ✅ 平分中间普通菜单项
+      text-align: center;   // 让内容居中
 
+      /* 第一个：站点标题，不平分 */
       &:first-child {
+        flex: 0 0 auto;
         font-weight: bold;
-        text-wrap: wrap;
 
         a {
+          flex: 0 0 auto;
           margin-left: 0;
+          text-align: center;
         }
       }
 
+      /* 最后一个：主题按钮，不平分 */
       &:last-child {
+        flex: 0 0 auto;
+
         a {
+          flex: 0 0 auto;
           margin-right: 0;
+          text-align: center;
         }
       }
     }
 
-    #theme-toggle {
-      a {
-        width: 25px;
-        display: flex;
-        justify-content: center;
-        cursor: pointer;
-      }
+    /* 主题切换按钮 a */
+    #theme-toggle a {
+      width: 25px;
+      display: flex;
+      justify-content: center;
+      cursor: pointer;
     }
 
+    /* hover 下划线动画 */
     a {
-      display: block;
       position: relative;
+      margin: 0;             // ✅ 取消左右 margin 干扰平分
+      padding: 0.5rem 1rem;  // ✅ 用 padding 控制间距
 
       &:before {
         content: "";
@@ -244,22 +257,18 @@
         left: 0;
         bottom: 0;
         height: 4px;
-        background: var(--global-border-color);
         width: 100%;
-        -webkit-transition: $global-transition;
+        background: var(--global-border-color);
+        transform: scaleX(0);
         transition: $global-transition;
-        -webkit-transform: scaleX(0);
-            -ms-transform: scaleX(0);
-                transform: scaleX(0); /* hide*/
       }
 
       &:hover:before {
-        -webkit-transform: scaleX(1);
-            -ms-transform: scaleX(1);
-                transform: scaleX(1); /* reveal*/
+        transform: scaleX(1);
       }
     }
   }
+
 
   .hidden-links {
     position: absolute;
