@@ -7,7 +7,7 @@
 # server process.
 
 # Basic Site Settings
-locale                   : "en-US"
+locale                   : "zh-CN" # The locale setting for the site, used for date formatting
 site_theme               : "default" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "Yesky / Blog"
 title_separator          : "-"
