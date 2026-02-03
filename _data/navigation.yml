@@ -13,7 +13,10 @@ main:
     url: /year-archive/
 
   - title: "Projects"
-    url: /projects/    
+    url: /projects/  
+
+  - title: "Year-end Summary"
+    url: /year-end-summary/   
     
   - title: "CV"
     url: /cv/
