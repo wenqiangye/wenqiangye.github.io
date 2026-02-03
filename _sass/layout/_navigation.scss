@@ -15,9 +15,9 @@
   padding-right: 2em;
   font-family: $sans-serif;
   -webkit-animation: intro 0.3s both;
-          animation: intro 0.3s both;
-  -webkit-animation-delay: 0.30s;
-          animation-delay: 0.30s;
+  animation: intro 0.3s both;
+  -webkit-animation-delay: 0.3s;
+  animation-delay: 0.3s;
 
   @include breakpoint($large) {
     padding-left: 1em;
@@ -50,7 +50,6 @@
     font-weight: bold;
   }
 }
-
 
 /*
    Post pagination navigation links
@@ -167,7 +166,6 @@
   border-top: 1px solid var(--global-border-color);
 }
 
-
 /*
    Priority plus navigation
    ========================================================================== */
@@ -204,14 +202,14 @@
 
   .visible-links {
     display: flex;
-    width: 100%;
+    width: 75%;
     align-items: center;
 
     /* li 作为 flex item */
     li {
-      display: block;       // ✅ 不要再用 flex
-      flex: 1 1 0;          // ✅ 平分中间普通菜单项
-      text-align: center;   // 让内容居中
+      display: block; // ✅ 不要再用 flex
+      flex: 1 1 0; // ✅ 平分中间普通菜单项
+      text-align: center; // 让内容居中
 
       /* 第一个：站点标题，不平分 */
       &:first-child {
@@ -248,8 +246,8 @@
     /* hover 下划线动画 */
     a {
       position: relative;
-      margin: 0;             // ✅ 取消左右 margin 干扰平分
-      padding: 0.5rem 1rem;  // ✅ 用 padding 控制间距
+      margin: 0; // ✅ 取消左右 margin 干扰平分
+      padding: 0.5rem 1rem; // ✅ 用 padding 控制间距
 
       &:before {
         content: "";
@@ -268,7 +266,6 @@
       }
     }
   }
-
 
   .hidden-links {
     position: absolute;
@@ -329,7 +326,6 @@
   }
 }
 
-
 /*
    Navigation list
    ========================================================================== */
@@ -384,7 +380,6 @@
   text-transform: uppercase;
   border-bottom: 1px solid var(--global-border-color);
 }
-
 
 /*
    Table of contents navigation
