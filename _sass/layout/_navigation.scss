@@ -172,73 +172,159 @@
    Priority plus navigation
    ========================================================================== */
 
-.visible-links {
-  display: flex;
-  width: 100%;
-  align-items: center;
+.greedy-nav {
+  position: relative;
+  min-width: 250px;
+  background: var(--global-bg-color);
 
-  /* li 作为 flex item */
-  li {
-    display: block;       // ✅ 不要再用 flex
-    flex: 1 1 0;          // ✅ 平分中间普通菜单项
-    text-align: center;   // 让内容居中
-
-    /* 第一个：站点标题，不平分 */
-    &:first-child {
-      flex: 0 0 auto;
-      font-weight: bold;
-
-      a {
-        flex: 0 0 auto;
-        margin-left: 0;
-        text-align: center;
-      }
-    }
-
-    /* 最后一个：主题按钮，不平分 */
-    &:last-child {
-      flex: 0 0 auto;
-
-      a {
-        flex: 0 0 auto;
-        margin-right: 0;
-        text-align: center;
-      }
-    }
-  }
-
-  /* 主题切换按钮 a */
-  #theme-toggle a {
-    width: 25px;
-    display: flex;
-    justify-content: center;
-    cursor: pointer;
-  }
-
-  /* hover 下划线动画 */
   a {
-    position: relative;
-    margin: 0;             // ✅ 取消左右 margin 干扰平分
-    padding: 0.5rem 1rem;  // ✅ 用 padding 控制间距
+    display: block;
+    margin: 0 1rem;
+    padding: 0.5rem 0;
+    color: var(--global-masthead-link-color);
+    text-decoration: none;
+
+    &:hover {
+      color: var(--global-masthead-link-color-hover);
+    }
+  }
+
+  button {
+    position: absolute;
+    height: 2.5rem;
+    right: 0;
+    padding: 0 0.5rem;
+    border: 0;
+    outline: none;
+    background-color: var(--global-bg-color);
+    color: var(--global-text-color);
+    cursor: pointer;
+    z-index: 100;
+  }
+
+  .visible-links {
+    display: flex;
+      width: 100%;
+      align-items: center;
+
+    li {
+      display: block;     // ✅ 不要 flex
+      flex: 1 1 0;        // ✅ 平分的核心
+
+      &:first-child {
+        font-weight: bold;
+        text-wrap: wrap;
+        
+
+        a {
+          margin-left: 0;
+          flex: 0 0 auto;
+          text-align: center;
+        }
+      }
+
+      &:last-child {
+        a {
+          margin-right: 0;
+          flex: 0 0 auto;
+          text-align: center;
+        }
+      }
+    }
+
+    #theme-toggle {
+      a {
+        width: 25px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+      }
+    }
+
+    a {
+      position: relative;
+
+      &:before {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: 0;
+        height: 4px;
+        background: var(--global-border-color);
+        width: 100%;
+        -webkit-transition: $global-transition;
+        transition: $global-transition;
+        -webkit-transform: scaleX(0);
+            -ms-transform: scaleX(0);
+                transform: scaleX(0); /* hide*/
+      }
+
+      &:hover:before {
+        -webkit-transform: scaleX(1);
+            -ms-transform: scaleX(1);
+                transform: scaleX(1); /* reveal*/
+      }
+    }
+  }
+
+  .hidden-links {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    margin-top: 15px;
+    padding: 5px;
+    border: 1px solid var(--global-border-color);
+    border-radius: $border-radius;
+    background: var(--global-bg-color);
+    box-shadow: 0 0 10px rgba(#000, 0.25);
+
+    a {
+      margin: 0;
+      padding: 10px 20px;
+      font-size: $type-size-5;
+
+      &:hover {
+        color: var(--global-masthead-link-color-hover);
+        background: var(--global-border-color);
+      }
+    }
 
     &:before {
       content: "";
       position: absolute;
-      left: 0;
-      bottom: 0;
-      height: 4px;
-      width: 100%;
-      background: var(--global-border-color);
-      transform: scaleX(0);
-      transition: $global-transition;
+      top: -11px;
+      right: 10px;
+      width: 0;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      border-color: var(--global-border-color) transparent;
+      display: block;
+      z-index: 0;
     }
 
-    &:hover:before {
-      transform: scaleX(1);
+    &:after {
+      content: "";
+      position: absolute;
+      top: -10px;
+      right: 10px;
+      width: 0;
+      border-style: solid;
+      border-width: 0 10px 10px;
+      border-color: var(--global-bg-color) transparent;
+      display: block;
+      z-index: 1;
+    }
+
+    li {
+      display: block;
+      border-bottom: 1px solid var(--global-border-color);
+
+      &:last-child {
+        border-bottom: none;
+      }
     }
   }
 }
-
 
 
 /*
