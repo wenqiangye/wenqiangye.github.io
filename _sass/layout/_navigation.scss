@@ -203,7 +203,9 @@
   }
 
   .visible-links {
-    display: table;
+    display: flex;          // 覆盖 table
+    width: 75%;
+    align-items: center;
 
     li {
       display: table-cell;
