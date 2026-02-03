@@ -201,48 +201,39 @@
   }
 
   .visible-links {
-    display: flex;
-    width: 100%;
-    align-items: center;
-    min-height: 60px;
+    display: table;
 
     li {
-      display: block; // ✅ 保证是块级元素
-      flex: 1; // ✅ 简化为 flex: 1
-      text-align: center; // 让内容居中
+      display: table-cell;
+      vertical-align: middle;
 
-      /* 第一个：站点标题，不平分 */
       &:first-child {
         font-weight: bold;
+        text-wrap: wrap;
 
         a {
           margin-left: 0;
-          text-align: left;
         }
       }
 
-      /* 最后一个：主题按钮，不平分 */
       &:last-child {
         a {
           margin-right: 0;
-          text-align: right;
         }
       }
     }
 
-    /* 主题切换按钮 a */
     #theme-toggle {
-      width: 25px;
-      display: flex;
-      justify-content: center;
-      cursor: pointer;
+      a {
+        width: 25px;
+        display: flex;
+        justify-content: center;
+        cursor: pointer;
+      }
     }
 
-    /* hover 下划线动画 */
     a {
       position: relative;
-      margin: 0; // ✅ 取消左右 margin 干扰平分
-      padding: 0.5rem 1rem; // ✅ 用 padding 控制间距
 
       &:before {
         content: "";
@@ -250,14 +241,19 @@
         left: 0;
         bottom: 0;
         height: 4px;
-        width: 100%;
         background: var(--global-border-color);
-        transform: scaleX(0);
+        width: 100%;
+        -webkit-transition: $global-transition;
         transition: $global-transition;
+        -webkit-transform: scaleX(0);
+        -ms-transform: scaleX(0);
+        transform: scaleX(0); /* hide*/
       }
 
       &:hover:before {
-        transform: scaleX(1);
+        -webkit-transform: scaleX(1);
+        -ms-transform: scaleX(1);
+        transform: scaleX(1); /* reveal*/
       }
     }
   }
