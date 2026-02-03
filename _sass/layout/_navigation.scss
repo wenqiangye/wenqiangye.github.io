@@ -205,19 +205,16 @@
     width: 100%;
     align-items: center;
 
-    /* li 作为 flex item */
     li {
-      display: block; // ✅ 不要再用 flex
-      flex: 1 1 0; // ✅ 平分中间普通菜单项
+      display: block; // ✅ 保证是块级元素
+      flex: 1; // ✅ 简化为 flex: 1
       text-align: center; // 让内容居中
 
       /* 第一个：站点标题，不平分 */
       &:first-child {
-        flex: 0 0 auto;
         font-weight: bold;
 
         a {
-          flex: 0 0 auto;
           margin-left: 0;
           text-align: center;
         }
@@ -225,10 +222,7 @@
 
       /* 最后一个：主题按钮，不平分 */
       &:last-child {
-        flex: 0 0 auto;
-
         a {
-          flex: 0 0 auto;
           margin-right: 0;
           text-align: center;
         }
@@ -238,8 +232,7 @@
     /* 主题切换按钮 a */
     #theme-toggle a {
       width: 25px;
-      display: block;
-      flex: 1 1 0;
+      display: flex;
       justify-content: center;
       cursor: pointer;
     }
