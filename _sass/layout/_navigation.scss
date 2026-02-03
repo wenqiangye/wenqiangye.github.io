@@ -208,6 +208,8 @@
       align-items: center;
 
     li {
+      display: block;     // ✅ 不要 flex
+      flex: 1 1 0;        // ✅ 平分的核心
 
       &:first-child {
         font-weight: bold;
