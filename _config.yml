@@ -24,13 +24,13 @@ repository               : "wenqiangye/wenqiangye.github.io"
 author:
   # Biographic information
   avatar           : "https://cdn.jsdelivr.net/gh//wenqiangye/yesky_image/img/20250418112754.jpg"
-  name             : "Your Sidebar Name"
-  pronouns         : # example: "she/her"  
-  bio              : "Short biography for the left-hand sidebar"
-  location         : "Earth"
+  name             : "yesky"
+  pronouns         : "he/him" # e.g., "she/her", "he/him", "they/them", or leave blank to not show
+  bio              : "山巅低谷，唯有坚持！"
+  location         : "四川省成都市"
   employer         : "Red Brick University"
-  uri              : # URL
-  email            : "none@example.org" 
+  uri              : "https://skyleaf.cn"
+  email            : "316606581@qq.com" 
 
   # Academic websites
   academia         : # URL
