@@ -11,8 +11,8 @@ redirect_from:
 Education
 =========
 
-* M.S. in Shanghai, China \\| Shanghai University,  Electronic Information, 2025
-* B.S. in Qingdao, China \\| China University of Petroleum (East China), Software Engineering, 2022
+* M.S. in Shanghai, China, Shanghai University,  Electronic Information, 2025
+* B.S. in Qingdao, China, China University of Petroleum (East China), Software Engineering, 2022
 
 # Contact
 
