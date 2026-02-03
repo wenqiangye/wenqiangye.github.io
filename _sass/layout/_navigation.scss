@@ -213,6 +213,8 @@
       &:first-child {
         font-weight: bold;
         text-wrap: wrap;
+        flex: 0 0 auto;
+        text-align: center;
 
         a {
           margin-left: 0;
@@ -220,6 +222,8 @@
       }
 
       &:last-child {
+        flex: 0 0 auto;
+        text-align: center;
         a {
           margin-right: 0;
         }
