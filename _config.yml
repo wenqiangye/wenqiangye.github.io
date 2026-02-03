@@ -23,7 +23,7 @@ repository               : "wenqiangye/wenqiangye.github.io"
 #               Additional customization can be done by editing /_includes/author-profile.html
 author:
   # Biographic information
-  avatar           : "profile.jpg" # filename of avatar image placed in /images/ for author profile
+  avatar           : "https://cdn.jsdelivr.net/gh//wenqiangye/yesky_image/img/20250418112754.jpg" # filename of avatar image placed in /images/ for author profile
   name             : "yesky"
   pronouns         : "he/him" # e.g., "she/her", "he/him", "they/them", or leave blank to not show
   bio              : "山巅低谷，唯有坚持！"
