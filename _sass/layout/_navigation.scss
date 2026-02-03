@@ -204,6 +204,7 @@
     display: flex;
     width: 100%;
     align-items: center;
+    min-height: 60px;
 
     li {
       display: block; // ✅ 保证是块级元素
