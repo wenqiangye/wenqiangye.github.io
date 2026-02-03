@@ -238,7 +238,8 @@
     /* 主题切换按钮 a */
     #theme-toggle a {
       width: 25px;
-      display: flex;
+      display: block;
+      flex: 1 1 0;
       justify-content: center;
       cursor: pointer;
     }
