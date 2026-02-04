@@ -6,8 +6,6 @@ author_profile: true
 redirect_from:
   - /resume
 ---
-{% include base_path %}
-
 Education
 =========
 
@@ -23,8 +21,7 @@ Education
 Skills
 ======
 
-* Java，SpringBoot, SpringBatch
-* CPP
-* Python
+* Java，CPP，Python
 * MySQL
+* SpringBoot
 * ...
