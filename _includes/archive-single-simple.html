@@ -1,7 +1,5 @@
 {% include base_path %}
 
-{% assign title = post.title | markdownify | remove: "<p>" | remove: "</p>" %}
-
 <div class="{{ include.type | default: "list" }}__item">
   <article class="archive__item" itemscope itemtype="http://schema.org/CreativeWork">
 
