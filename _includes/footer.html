@@ -3,15 +3,15 @@
 {% if site.author.github or site.author.bitbucket or site.atom_feed.hide != true %}
 <div class="page__footer-follow">
     <!-- # 我的备案信息，请你的网站删掉这一项。互联网非法外之地！ -->
-  <div>
+  <div class="fab fa-github">
       <i class="fa-solid fa-info-circle fa-fw"></i>
-      <a href="http://beian.miit.gov.cn" font-size="4px" target="_blank" rel="nofollow">
+      <a href="http://beian.miit.gov.cn">
       鲁ICP备19026057号
       </a>
   </div>
 
   <!-- | # 运行时间，可将倒数第三行的时间改成你自己的建站时间，格式仿照上面的；不需要的话可以把这一项都删掉 -->
-  <div>
+  <div class="fab fa-github">
       <i class="fa-solid fa-cog fa-spin fa-fw"></i>
       <span id="run_time_day">
       <i class="fa-solid fa-spinner fa-pulse"></i>
@@ -56,6 +56,7 @@
       "11/15/2022 11:11:11")// 这是我第一篇CSDN博客的时间
       </script>
   </div>
+
 
   <ul class="social-icons">
     {% if site.data.ui-text[site.locale].follow_label %}
