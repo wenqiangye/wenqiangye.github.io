@@ -234,6 +234,9 @@ collections:
   talks:
     output: true
     permalink: /:collection/:path/
+  yearsummaries:
+    output: true
+    permalink: /year-end-summary/:path/
 
 
 # These settings control how pages and collections are included in the site
