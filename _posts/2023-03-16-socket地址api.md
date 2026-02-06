@@ -9,7 +9,7 @@ tags:
 
 ## 主机字节序和网络字节序
 
-字节序分为大端字节序$(big \quad endian)$和小端字节序$(little \quad endian)$。
+字节序分为大端字节序\\((big \quad endian)\\)和小端字节序\\((little \quad endian)\\)。
 
 大端字节序是指一 个整数的高位字节（23～31 bit）存储在内存的低地址处，低位字节（0 ～7 bit）存储在内存的高地址处。
 
@@ -40,7 +40,7 @@ struct sockaddr
 }
 ```
 
-$sa\underline{}family$成员是地址族类型（$sa\underline{}family\underline{}t$）的变量。
+\\(sa\underline{}family\\)成员是地址族类型（\\(sa\underline{}family\underline{}t\\)）的变量。
 
 |  协议族  |  地址族  |       描述       |
 | :------: | :------: | :--------------: |
