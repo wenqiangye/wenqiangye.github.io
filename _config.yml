@@ -265,15 +265,17 @@ defaults:
       author_profile: true
       share: true
       comments: true
-  # _publications
-  # - scope:
-  #     path: ""
-  #     type: publications
-  #   values:
-  #     layout: single
-  #     author_profile: true
-  #     share: true
-  #     comments: true
+  # _yearsummaries
+  - scope:
+      path: ""
+      type: yearsummaries
+    values:
+      layout: single
+      author_profile: true
+      read_time: true
+      comments: true
+      share: true
+      related: true
   # _portfolio
   - scope:
       path: ""
