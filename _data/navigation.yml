@@ -18,6 +18,9 @@ main:
   - title: "Year Summaries"
     url: /year-end-summary/   
     
+  - title: "Tags"
+    url: /tags/
+    
   - title: "CV"
     url: /cv/
 
