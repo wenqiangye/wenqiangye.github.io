@@ -2,6 +2,61 @@
 
 {% if site.author.github or site.author.bitbucket or site.atom_feed.hide != true %}
 <div class="page__footer-follow">
+    <!-- # 我的备案信息，请你的网站删掉这一项。互联网非法外之地！ -->
+  <div>
+      <i class="fa-solid fa-info-circle fa-fw"></i>
+      <a href="http://beian.miit.gov.cn">
+      鲁ICP备19026057号
+      </a>
+  </div>
+
+  <!-- | # 运行时间，可将倒数第三行的时间改成你自己的建站时间，格式仿照上面的；不需要的话可以把这一项都删掉 -->
+  <div>
+      <i class="fa-solid fa-cog fa-spin fa-fw"></i>
+      <span id="run_time_day">
+      <i class="fa-solid fa-spinner fa-pulse"></i>
+      </span>天
+      <span id="run_time_hour">
+      <i class="fa-solid fa-spinner fa-pulse"></i>
+      </span>时
+      <span id="run_time_minute">
+      <i class="fa-solid fa-spinner fa-pulse"></i>
+      </span>分
+      <span id="run_time_second">
+      <i class="fa-solid fa-spinner fa-pulse"></i>
+      </span>秒
+      <script>
+      setInterval(function (d,h,m,s,b) {
+          function setzero(i) {
+          return i < 10 ? "0" + i : i;
+          }
+          let BirthDay = new Date(b);
+          let today = new Date();
+          let timeold = (today.getTime() - BirthDay.getTime());
+          let sectimeold = timeold / 1000;
+          let secondsold = Math.floor(sectimeold);
+          let msPerDay = 24 * 60 * 60 * 1000;
+          let e_daysold = timeold / msPerDay;
+          let daysold = Math.floor(e_daysold);
+          let e_hrsold = (e_daysold - daysold) * 24;
+          let hrsold = Math.floor(e_hrsold);
+          let e_minsold = (e_hrsold - hrsold) * 60;
+          let minsold = Math.floor((e_hrsold - hrsold) * 60);
+          let seconds = Math.floor((e_minsold - minsold) * 60);
+          d.textContent = daysold;
+          h.textContent = setzero(hrsold);
+          m.textContent = setzero(minsold);
+          s.textContent = setzero(seconds);
+      },
+      1000,
+      document.getElementById("run_time_day"),
+      document.getElementById("run_time_hour"),
+      document.getElementById("run_time_minute"),
+      document.getElementById("run_time_second"),
+      "11/15/2022 11:11:11")// 这是我第一篇CSDN博客的时间
+      </script>
+  </div>
+
   <ul class="social-icons">
     {% if site.data.ui-text[site.locale].follow_label %}
       <li><strong>{{ site.data.ui-text[site.locale].follow_label }}</strong></li>
