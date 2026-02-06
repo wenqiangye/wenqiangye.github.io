@@ -236,7 +236,7 @@ collections:
     permalink: /:collection/:path/
   yearsummaries:
     output: true
-    permalink: /year-end-summary/:path/
+    permalink: /:collection/:path/
 
 
 # These settings control how pages and collections are included in the site
