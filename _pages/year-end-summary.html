@@ -8,6 +8,7 @@ redirect_from:
 ---
 
 {% include base_path %}
+<h1>base_path</h1>
 {% capture written_year %}'None'{% endcapture %}
 {% for post in site.yearsummaries %}
   {% capture year %}{{ post.date | date: '%Y' }}{% endcapture %}
