@@ -250,7 +250,7 @@ defaults:
       author_profile: true
       read_time: true
       comments: true
-      share: true
+      # share: true
       related: true
   # _pages
   - scope:
@@ -276,7 +276,7 @@ defaults:
       layout: single
       author_profile: true
       read_time: true
-      comments: true
+      # comments: true
       related: true
   # _portfolio
   - scope:
