@@ -8,7 +8,7 @@
 
 # Basic Site Settings
 locale                   : "zh-CN" # The locale setting for the site, used for date formatting
-site_theme               : "air" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
+site_theme               : "mint" # The available themes options are "default", "air", "sunrise", "mint", "dirt" and "contrast"
 title                    : "Yesky / Blog"
 title_separator          : "-"
 name                     : &name "yesky"
