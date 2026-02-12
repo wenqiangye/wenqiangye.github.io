@@ -1,24 +1,35 @@
 /* ============================================
    Particle Background and Theme Styles
+   Aries Personality: Bold, Energetic, Passionate
    ============================================ */
 
-/* CSS 变量定义 */
+/* CSS 变量定义 - 白羊座配色 */
 :root {
+  /* 亮色模式 - 充满活力的暖色调 */
   --light-bg: #ffffff;
-  --light-text: #202122;
-  --light-text-secondary: #565656;
-  --light-border: #e8e8e8;
-  --light-accent: #3273dc;
-  --light-gradient-start: #f5f7fa;
-  --light-gradient-end: #c3cfe2;
+  --light-text: #1a1a1a;
+  --light-text-secondary: #4a4a4a;
+  --light-border: #e0e0e0;
+  --light-accent: #ff6b35;
+  --light-accent-secondary: #f77f00;
+  --light-gradient-start: #fff5ee;
+  --light-gradient-end: #ffe0d9;
   
-  --dark-bg: #1a1a2e;
-  --dark-text: #f0f0f0;
-  --dark-text-secondary: #b0b0b0;
-  --dark-border: #404060;
-  --dark-accent: #5ba3ff;
-  --dark-gradient-start: #1e1e2e;
-  --dark-gradient-end: #2d2d3d;
+  /* 暗色模式 - 深沉却不失活力 */
+  --dark-bg: #0f0f1e;
+  --dark-text: #f5f5f5;
+  --dark-text-secondary: #c0c0c0;
+  --dark-border: #2a2a4a;
+  --dark-accent: #ff6b35;
+  --dark-accent-secondary: #f77f00;
+  --dark-gradient-start: #1a1a2e;
+  --dark-gradient-end: #16213e;
+  
+  /* 白羊座专属颜色 */
+  --aries-red: #ff4444;
+  --aries-orange: #ff7722;
+  --aries-gold: #ffa500;
+  --aries-light: #ffe6d5;
 }
 
 /* 亮色模式 */
@@ -68,16 +79,16 @@ body {
   right: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.95);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 245, 238, 0.95) 100%);
   backdrop-filter: blur(12px);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.15);
   transition: all 0.4s ease;
 }
 
 /* 暗色主题导航栏 */
 [data-theme="dark"] .masthead {
-  background: rgba(26, 26, 46, 0.95);
-  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+  background: linear-gradient(135deg, rgba(15, 15, 30, 0.95) 0%, rgba(26, 26, 46, 0.95) 100%);
+  box-shadow: 0 4px 20px rgba(255, 107, 53, 0.2);
 }
 
 /* 导航栏内部链接 */
@@ -94,11 +105,13 @@ body {
 
 /* 导航栏链接悬停 */
 .masthead a:hover {
-  color: var(--light-accent);
+  color: var(--aries-red);
+  text-shadow: 0 0 10px rgba(255, 68, 68, 0.3);
 }
 
 [data-theme="dark"] .masthead a:hover {
-  color: var(--dark-accent);
+  color: var(--aries-orange);
+  text-shadow: 0 0 10px rgba(255, 119, 34, 0.3);
 }
 
 /* 主题图标 */
@@ -144,48 +157,68 @@ main,
   left: 0;
   right: 0;
   width: 100%;
-  background: rgba(248, 248, 248, 0.95);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 245, 238, 0.95) 100%);
   color: var(--light-text-secondary);
-  border-top: 1px solid var(--light-border);
+  border-top: 2px solid var(--aries-orange);
   transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
   z-index: 100;
   padding: 20px 0;
   backdrop-filter: blur(8px);
-  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 -4px 20px rgba(255, 107, 53, 0.15);
 }
 
 [data-theme="dark"] .page__footer {
-  background: rgba(26, 26, 46, 0.95);
+  background: linear-gradient(135deg, rgba(15, 15, 30, 0.95) 0%, rgba(26, 26, 46, 0.95) 100%);
   color: var(--dark-text-secondary);
-  border-top: 1px solid var(--dark-border);
-  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.3);
+  border-top: 2px solid var(--aries-red);
+  box-shadow: 0 -4px 20px rgba(255, 107, 53, 0.2);
 }
 
 /* 页脚链接 */
 .page__footer a {
-  color: var(--light-accent);
-  transition: color 0.3s ease;
+  color: var(--aries-orange);
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.page__footer a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--aries-red);
+  transition: width 0.3s ease;
 }
 
 [data-theme="dark"] .page__footer a {
-  color: var(--dark-accent);
+  color: var(--aries-gold);
 }
 
-.page__footer a:hover {
-  opacity: 0.8;
+[data-theme="dark"] .page__footer a::after {
+  background: var(--aries-orange);
+}
+
+.page__footer a:hover::after {
+  width: 100%;
 }
 
 /* 页面内容区域 */
 .page__content {
-  background: rgba(255, 255, 255, 0.5);
+  background: rgba(255, 255, 255, 0.7);
   transition: background-color 0.4s ease;
-  border-radius: 8px;
+  border-radius: 12px;
   margin: 20px;
-  padding: 20px;
+  padding: 30px;
+  border-left: 4px solid var(--aries-orange);
+  box-shadow: 0 8px 32px rgba(255, 107, 53, 0.1);
 }
 
 [data-theme="dark"] .page__content {
-  background: rgba(26, 26, 46, 0.4);
+  background: rgba(26, 26, 46, 0.6);
+  border-left-color: var(--aries-red);
+  box-shadow: 0 8px 32px rgba(255, 107, 53, 0.15);
 }
 
 /* 所有文本元素的颜色过渡 */
@@ -195,22 +228,38 @@ p, h1, h2, h3, h4, h5, h6 {
 
 /* 链接样式 */
 a {
-  color: var(--light-accent);
-  transition: color 0.3s ease;
+  color: var(--aries-orange);
+  transition: all 0.3s ease;
   text-decoration: none;
+  position: relative;
+}
+
+a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, var(--aries-orange), var(--aries-red));
+  transition: width 0.3s ease;
 }
 
 a:hover {
-  color: var(--light-accent);
-  opacity: 0.8;
+  color: var(--aries-red);
+  opacity: 1;
+}
+
+a:hover::after {
+  width: 100%;
 }
 
 [data-theme="dark"] a {
-  color: var(--dark-accent);
+  color: var(--aries-gold);
 }
 
 [data-theme="dark"] a:hover {
-  opacity: 0.8;
+  color: var(--aries-orange);
 }
 
 /* 代码块和高亮 */
@@ -272,16 +321,28 @@ button, input, textarea, select {
 
 /* 块引用样式 */
 blockquote {
-  border-left: 4px solid var(--light-accent);
+  border-left: 4px solid var(--aries-orange);
   margin: 1em 0;
   padding: 0.5em 1em;
-  background-color: rgba(0, 0, 0, 0.02);
+  background: linear-gradient(90deg, rgba(255, 107, 53, 0.08) 0%, transparent 100%);
   transition: all 0.4s ease;
+  border-radius: 4px;
+}
+
+blockquote:hover {
+  border-left-color: var(--aries-red);
+  background: linear-gradient(90deg, rgba(255, 107, 53, 0.15) 0%, transparent 100%);
+  padding-left: 1.5em;
 }
 
 [data-theme="dark"] blockquote {
-  border-left-color: var(--dark-accent);
-  background-color: rgba(255, 255, 255, 0.05);
+  border-left-color: var(--aries-red);
+  background: linear-gradient(90deg, rgba(255, 107, 53, 0.12) 0%, transparent 100%);
+}
+
+[data-theme="dark"] blockquote:hover {
+  border-left-color: var(--aries-orange);
+  background: linear-gradient(90deg, rgba(255, 107, 53, 0.2) 0%, transparent 100%);
 }
 
 /* 主题切换按钮样式 */
@@ -292,7 +353,7 @@ blockquote {
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: 2px solid rgba(255, 165, 0, 0.3);
+  border: 2px solid rgba(255, 107, 53, 0.5);
   cursor: pointer;
   font-size: 24px;
   display: flex;
@@ -300,10 +361,10 @@ blockquote {
   justify-content: center;
   z-index: 999;
   transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
-  background: rgba(255, 255, 255, 0.95);
-  box-shadow: 0 0 20px rgba(255, 165, 0, 0.5),
-              0 0 40px rgba(255, 200, 0, 0.3),
-              inset 0 0 20px rgba(255, 200, 100, 0.2);
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.95) 0%, rgba(255, 245, 238, 0.95) 100%);
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.6),
+              0 0 40px rgba(255, 119, 34, 0.4),
+              inset 0 0 20px rgba(255, 200, 150, 0.3);
 }
 
 /* 亮色模式 - 太阳按钮 */
@@ -316,11 +377,11 @@ blockquote {
 
 /* 暗色模式 - 月亮按钮 */
 [data-theme="dark"] .theme-toggle-btn {
-  background: rgba(26, 26, 46, 0.95);
-  border-color: rgba(100, 200, 255, 0.3);
-  box-shadow: 0 0 20px rgba(100, 200, 255, 0.5),
-              0 0 40px rgba(100, 150, 255, 0.3),
-              inset 0 0 20px rgba(100, 150, 200, 0.2);
+  background: linear-gradient(135deg, rgba(15, 15, 30, 0.95) 0%, rgba(26, 26, 46, 0.95) 100%);
+  border-color: rgba(255, 107, 53, 0.6);
+  box-shadow: 0 0 20px rgba(255, 107, 53, 0.7),
+              0 0 40px rgba(255, 107, 53, 0.4),
+              inset 0 0 20px rgba(255, 107, 53, 0.2);
 }
 
 [data-theme="dark"] .theme-toggle-btn::before {
@@ -331,15 +392,15 @@ blockquote {
 /* 太阳发光动画 */
 @keyframes sun-glow {
   0%, 100% {
-    text-shadow: 0 0 10px rgba(255, 165, 0, 0.8),
-                 0 0 20px rgba(255, 200, 0, 0.6),
-                 0 0 30px rgba(255, 100, 0, 0.4);
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.8),
+                 0 0 20px rgba(255, 119, 34, 0.6),
+                 0 0 30px rgba(255, 68, 68, 0.4);
     transform: scale(1) rotate(0deg);
   }
   50% {
-    text-shadow: 0 0 20px rgba(255, 165, 0, 1),
-                 0 0 30px rgba(255, 200, 0, 0.8),
-                 0 0 40px rgba(255, 100, 0, 0.6);
+    text-shadow: 0 0 20px rgba(255, 107, 53, 1),
+                 0 0 30px rgba(255, 119, 34, 0.8),
+                 0 0 40px rgba(255, 68, 68, 0.6);
     transform: scale(1.05) rotate(5deg);
   }
 }
@@ -347,31 +408,187 @@ blockquote {
 /* 月亮发光动画 */
 @keyframes moon-glow {
   0%, 100% {
-    text-shadow: 0 0 10px rgba(100, 200, 255, 0.8),
-                 0 0 20px rgba(150, 200, 255, 0.6),
-                 0 0 30px rgba(100, 150, 255, 0.4);
+    text-shadow: 0 0 10px rgba(255, 107, 53, 0.8),
+                 0 0 20px rgba(255, 165, 0, 0.6),
+                 0 0 30px rgba(255, 119, 34, 0.4);
     transform: scale(1) rotate(0deg);
   }
   50% {
-    text-shadow: 0 0 20px rgba(100, 200, 255, 1),
-                 0 0 30px rgba(150, 200, 255, 0.8),
-                 0 0 40px rgba(100, 150, 255, 0.6);
+    text-shadow: 0 0 20px rgba(255, 107, 53, 1),
+                 0 0 30px rgba(255, 165, 0, 0.8),
+                 0 0 40px rgba(255, 119, 34, 0.6);
     transform: scale(1.05) rotate(-5deg);
   }
 }
 
 /* 按钮悬停效果 */
 .theme-toggle-btn:hover {
-  transform: scale(1.15);
-  box-shadow: 0 0 30px rgba(255, 165, 0, 0.8),
-              0 0 50px rgba(255, 200, 0, 0.5),
-              0 4px 15px rgba(0, 0, 0, 0.15);
+  transform: scale(1.15) rotate(10deg);
+  box-shadow: 0 0 30px rgba(255, 107, 53, 0.9),
+              0 0 50px rgba(255, 68, 68, 0.6),
+              0 4px 20px rgba(255, 107, 53, 0.3),
+              inset 0 0 30px rgba(255, 200, 150, 0.4);
 }
 
 [data-theme="dark"] .theme-toggle-btn:hover {
-  box-shadow: 0 0 30px rgba(100, 200, 255, 0.8),
-              0 0 50px rgba(150, 200, 255, 0.5),
-              0 4px 15px rgba(0, 0, 0, 0.3);
+  transform: scale(1.15) rotate(-10deg);
+  box-shadow: 0 0 30px rgba(255, 107, 53, 0.9),
+              0 0 50px rgba(255, 107, 53, 0.6),
+              0 4px 20px rgba(255, 107, 53, 0.4),
+              inset 0 0 30px rgba(255, 107, 53, 0.3);
+}
+
+/* ============================================
+   白羊座主题额外装饰
+   ============================================ */
+
+/* 表格样式优化 */
+table {
+  border-collapse: collapse;
+  margin: 20px 0;
+  width: 100%;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.1);
+}
+
+table th {
+  background: linear-gradient(135deg, var(--aries-orange), var(--aries-red));
+  color: white;
+  padding: 12px;
+  text-align: left;
+  font-weight: 600;
+  transition: background 0.3s ease;
+}
+
+[data-theme="dark"] table th {
+  background: linear-gradient(135deg, var(--aries-red), var(--aries-orange));
+}
+
+table tr:hover {
+  background-color: rgba(255, 107, 53, 0.1);
+}
+
+table td {
+  padding: 12px;
+  border-bottom: 1px solid rgba(255, 107, 53, 0.2);
+  transition: background-color 0.3s ease;
+}
+
+[data-theme="dark"] table td {
+  border-bottom-color: rgba(255, 107, 53, 0.3);
+}
+
+/* 列表项样式 */
+li {
+  transition: transform 0.2s ease;
+  margin: 8px 0;
+}
+
+li:hover {
+  transform: translateX(4px);
+}
+
+li::marker {
+  color: var(--aries-orange);
+}
+
+[data-theme="dark"] li::marker {
+  color: var(--aries-gold);
+}
+
+/* 输入框和表单元素 */
+input,
+textarea,
+select {
+  border: 2px solid rgba(255, 107, 53, 0.3);
+  border-radius: 6px;
+  padding: 10px;
+  transition: all 0.3s ease;
+  background-color: var(--light-bg);
+  color: var(--light-text);
+}
+
+input:focus,
+textarea:focus,
+select:focus {
+  border-color: var(--aries-orange);
+  box-shadow: 0 0 12px rgba(255, 107, 53, 0.3);
+  outline: none;
+}
+
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+  border-color: rgba(255, 107, 53, 0.4);
+}
+
+[data-theme="dark"] input:focus,
+[data-theme="dark"] textarea:focus,
+[data-theme="dark"] select:focus {
+  box-shadow: 0 0 12px rgba(255, 107, 53, 0.4);
+}
+
+/* 水平分割线 */
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(90deg, transparent, var(--aries-orange), transparent);
+  margin: 24px 0;
+  border-radius: 1px;
+}
+
+/* 强调文本 */
+strong, b {
+  color: var(--aries-red);
+  font-weight: 600;
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] strong,
+[data-theme="dark"] b {
+  color: var(--aries-orange);
+}
+
+/* 删除文本 */
+del {
+  color: var(--light-text-secondary);
+  text-decoration: line-through;
+  opacity: 0.6;
+}
+
+[data-theme="dark"] del {
+  color: var(--dark-text-secondary);
+}
+
+/* 标签/标签样式 */
+.tag, .label, .badge {
+  display: inline-block;
+  padding: 4px 12px;
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.2), rgba(255, 68, 68, 0.2));
+  border: 1px solid var(--aries-orange);
+  border-radius: 20px;
+  color: var(--aries-red);
+  font-size: 0.9em;
+  margin: 4px 4px;
+  transition: all 0.3s ease;
+}
+
+.tag:hover,
+.label:hover,
+.badge:hover {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.3), rgba(255, 68, 68, 0.3));
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.2);
+}
+
+[data-theme="dark"] .tag,
+[data-theme="dark"] .label,
+[data-theme="dark"] .badge {
+  background: linear-gradient(135deg, rgba(255, 107, 53, 0.3), rgba(255, 68, 68, 0.3));
+  color: var(--aries-gold);
 }
 
 /* 响应式调整 */
@@ -424,4 +641,86 @@ blockquote {
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
+}
+
+/* 标题样式优化 - 白羊座风格 */
+h1, h2, h3, h4, h5, h6 {
+  position: relative;
+  transition: all 0.3s ease;
+}
+
+h1::before,
+h2::before,
+h3::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 60%;
+  background: linear-gradient(180deg, var(--aries-red), var(--aries-orange));
+  border-radius: 2px;
+  margin-right: 12px;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+h1 { padding-left: 16px; }
+h2 { padding-left: 16px; }
+h3 { padding-left: 16px; }
+
+h1:hover::before,
+h2:hover::before,
+h3:hover::before {
+  opacity: 1;
+}
+
+[data-theme="dark"] h1::before,
+[data-theme="dark"] h2::before,
+[data-theme="dark"] h3::before {
+  background: linear-gradient(180deg, var(--aries-orange), var(--aries-gold));
+}
+
+/* 代码块样式 */
+code, pre {
+  background-color: rgba(255, 107, 53, 0.08);
+  border: 1px solid rgba(255, 107, 53, 0.2);
+  transition: all 0.4s ease;
+  border-radius: 6px;
+  font-family: 'Courier New', monospace;
+}
+
+code:hover, pre:hover {
+  background-color: rgba(255, 107, 53, 0.12);
+  border-color: rgba(255, 107, 53, 0.4);
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.1);
+}
+
+[data-theme="dark"] code,
+[data-theme="dark"] pre {
+  background-color: rgba(255, 107, 53, 0.1);
+  border-color: rgba(255, 107, 53, 0.3);
+}
+
+/* 按钮元素样式 */
+button:not(.theme-toggle-btn) {
+  background: linear-gradient(135deg, var(--aries-orange), var(--aries-red));
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+}
+
+button:not(.theme-toggle-btn):hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 107, 53, 0.4);
+  background: linear-gradient(135deg, var(--aries-red), var(--aries-orange));
+}
+
+[data-theme="dark"] button:not(.theme-toggle-btn) {
+  background: linear-gradient(135deg, var(--aries-red), var(--aries-orange));
 }

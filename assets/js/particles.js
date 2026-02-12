@@ -15,13 +15,14 @@
     }
 
     getRandomColor() {
+      // 白羊座配色：红、橙、金色系
       const colors = [
-        [100, 150, 255],
-        [150, 100, 255],
-        [100, 255, 150],
-        [255, 150, 100],
-        [255, 200, 100],
-        [150, 200, 255]
+        [255, 107, 53],   // 主红橙色
+        [255, 119, 34],   // 深橙色
+        [255, 165, 0],    // 金色
+        [255, 68, 68],    // 红色
+        [255, 200, 100],  // 浅橙色
+        [220, 88, 44]     // 深红橙
       ];
       return colors[Math.floor(Math.random() * colors.length)];
     }
@@ -96,11 +97,15 @@
     drawBackground() {
       const gradient = this.ctx.createLinearGradient(0, 0, this.canvas.width, this.canvas.height);
       if (this.isDarkMode) {
-        gradient.addColorStop(0, '#1e1e2e');
-        gradient.addColorStop(1, '#2d2d3d');
+        // 暗色模式：深蓝到深红
+        gradient.addColorStop(0, '#0f0f1e');
+        gradient.addColorStop(0.5, '#1a1a2e');
+        gradient.addColorStop(1, '#16213e');
       } else {
-        gradient.addColorStop(0, '#f5f7fa');
-        gradient.addColorStop(1, '#c3cfe2');
+        // 亮色模式：奶白到浅橙（白羊座风格）
+        gradient.addColorStop(0, '#fff5ee');
+        gradient.addColorStop(0.5, '#ffece0');
+        gradient.addColorStop(1, '#ffe0d9');
       }
       this.ctx.fillStyle = gradient;
       this.ctx.fillRect(0, 0, this.canvas.width, this.canvas.height);
@@ -143,7 +148,12 @@
 
           if (dist < distance) {
             const opacity = (1 - dist / distance) * 0.3;
-            this.ctx.strokeStyle = `rgba(150, 150, 200, ${opacity})`;
+            // 白羊座配色的连接线
+            if (this.isDarkMode) {
+              this.ctx.strokeStyle = `rgba(255, 119, 34, ${opacity * 1.5})`;
+            } else {
+              this.ctx.strokeStyle = `rgba(255, 107, 53, ${opacity})`;
+            }
             this.ctx.lineWidth = 0.5;
             this.ctx.beginPath();
             this.ctx.moveTo(this.particles[a].x, this.particles[a].y);
@@ -162,8 +172,13 @@
 
           if (dist < distance) {
             const opacity = (1 - dist / distance) * 0.5;
-            this.ctx.strokeStyle = `rgba(100, 200, 255, ${opacity})`;
-            this.ctx.lineWidth = 1;
+            // 鼠标交互线使用更亮的颜色
+            if (this.isDarkMode) {
+              this.ctx.strokeStyle = `rgba(255, 165, 0, ${opacity})`;
+            } else {
+              this.ctx.strokeStyle = `rgba(255, 68, 68, ${opacity * 0.8})`;
+            }
+            this.ctx.lineWidth = 1.5;
             this.ctx.beginPath();
             this.ctx.moveTo(this.mouse.x, this.mouse.y);
             this.ctx.lineTo(this.particles[i].x, this.particles[i].y);

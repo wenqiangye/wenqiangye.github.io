@@ -45,11 +45,15 @@ layout: compress
             const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
             
             if (isDark) {
-              gradient.addColorStop(0, '#1e1e2e');
-              gradient.addColorStop(1, '#2d2d3d');
+              // 暗色模式：深蓝到深红
+              gradient.addColorStop(0, '#0f0f1e');
+              gradient.addColorStop(0.5, '#1a1a2e');
+              gradient.addColorStop(1, '#16213e');
             } else {
-              gradient.addColorStop(0, '#f5f7fa');
-              gradient.addColorStop(1, '#c3cfe2');
+              // 亮色模式：奶白到浅橙（白羊座风格）
+              gradient.addColorStop(0, '#fff5ee');
+              gradient.addColorStop(0.5, '#ffece0');
+              gradient.addColorStop(1, '#ffe0d9');
             }
             
             ctx.fillStyle = gradient;
