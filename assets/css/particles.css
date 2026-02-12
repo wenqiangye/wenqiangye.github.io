@@ -1,5 +1,9 @@
 /* Particle Background Styles */
-html, body {
+html {
+  background: transparent;
+}
+
+body {
   margin: 0;
   padding: 0;
   background: transparent;
@@ -12,28 +16,43 @@ html, body {
   left: 0;
   width: 100vw;
   height: 100vh;
-  z-index: -100;
+  z-index: -1000;
   pointer-events: none;
 }
 
-/* 针对暗色主题的调整 */
+/* 固定导航栏 */
+.masthead {
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.98);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 暗色主题导航栏 */
+[data-theme="dark"] .masthead {
+  background: rgba(30, 30, 46, 0.98);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+/* 调整body内容顶部距离 */
+body {
+  padding-top: 60px;
+}
+
+/* 为粒子添加滤镜效果（暗色主题） */
 [data-theme="dark"] #particles-canvas {
   filter: invert(1) hue-rotate(180deg) brightness(0.9);
 }
 
-/* 确保内容在粒子上方 */
-body {
-  position: relative;
-  z-index: 1;
-}
-
-.skip-links,
-.page__header,
-.page__footer,
-.masthead,
-.page__content,
-nav,
+/* 确保所有内容在粒子上方 */
 main,
+.page__content,
+.page__footer,
 .page {
   position: relative;
   z-index: 1;
