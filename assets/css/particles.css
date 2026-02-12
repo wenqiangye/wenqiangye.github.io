@@ -1,0 +1,28 @@
+/* Particle Background Styles */
+#particles-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+  pointer-events: none;
+}
+
+/* 针对暗色主题的调整 */
+[data-theme="dark"] #particles-canvas {
+  background: linear-gradient(135deg, #1e1e2e 0%, #2d2d3d 100%);
+}
+
+/* 确保内容在粒子上方 */
+body {
+  position: relative;
+}
+
+.page__content,
+.page__footer,
+.masthead {
+  position: relative;
+  z-index: 1;
+}
