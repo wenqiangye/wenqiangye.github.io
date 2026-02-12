@@ -6,10 +6,16 @@
   @include container;
   @include clearfix;
   margin-top: 2em;
-  padding-left: 1em;
-  padding-right: 1em;
+  padding-left: 1.2em;
+  padding-right: 1.2em;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
+
+  @include breakpoint($medium) {
+    padding-left: 1.5em;
+    padding-right: 1.5em;
+    margin-top: 2.5em;
+  }
 
   @include breakpoint($x-large) {
     max-width: $x-large;
@@ -17,6 +23,10 @@
 }
 
 .page {
+  @include breakpoint($medium) {
+    @include span(9 of 12 last);
+  }
+
   @include breakpoint($large) {
     @include span(10 of 12 last);
     @include prefix(0.5 of 12);
@@ -51,24 +61,35 @@
 .page__content {
 
   h2 {
-    padding-bottom: 0.7em;
-    border-bottom: 2px solid #3498db;
-    margin-top: 1.5em;
+    padding-bottom: 0.8em;
+    padding-top: 0.4em;
+    border-bottom: 3px solid #3498db;
+    margin-top: 1.8em;
+    margin-bottom: 0.8em;
   }
 
   h3 {
     color: #2c3e50;
-    padding-bottom: 0.4em;
-    border-bottom: 1px solid #e1e8ed;
+    padding-bottom: 0.5em;
+    margin-top: 1.5em;
+    margin-bottom: 0.6em;
+    border-bottom: 2px solid #ecf0f1;
+    font-weight: 600;
+  }
+
+  h4 {
+    margin-top: 1.2em;
+    margin-bottom: 0.5em;
   }
 
   p, li, dl {
     font-size: 1em;
+    line-height: 1.8;
   }
 
   /* paragraph indents */
   p {
-    margin: 0 0 $indent-var;
+    margin: 0 0 1.6em;
 
     /* sibling indentation*/
     @if $paragraph-indent == true {
@@ -84,10 +105,12 @@
     color: #3498db;
     border-bottom: 2px solid transparent;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    font-weight: 500;
 
     &:hover {
       color: #2980b9;
       border-bottom-color: #3498db;
+      padding-bottom: 2px;
 
       img {
         box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);

@@ -14,6 +14,7 @@
   padding-left: 2em;
   padding-right: 2em;
   font-family: $sans-serif;
+  font-size: 0.9em;
   -webkit-animation: intro 0.3s both;
   animation: intro 0.3s both;
   -webkit-animation-delay: 0.3s;
@@ -44,60 +45,97 @@
 
   li {
     display: inline;
+    margin-right: 0.5em;
+
+    &::after {
+      content: "/";
+      margin-left: 0.5em;
+      color: #bdc3c7;
+    }
+
+    &:last-child::after {
+      content: "";
+    }
+  }
+
+  a {
+    color: #3498db;
+    text-decoration: none;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #2980b9;
+      text-decoration: underline;
+    }
   }
 
   .current {
-    font-weight: bold;
+    font-weight: 600;
+    color: #2c3e50;
   }
 }
-
-/*
-   Post pagination navigation links
-   ========================================================================== */
 
 .pagination {
   @include full();
   @include clearfix();
-  margin-top: 1em;
-  padding-top: 1em;
+  margin-top: 2em;
+  padding-top: 2em;
+  border-top: 2px solid #ecf0f1;
 
   ul {
     margin: 0;
     padding: 0;
     list-style-type: none;
     font-family: $sans-serif;
+    display: flex;
+    justify-content: center;
+    gap: 0.5em;
+    flex-wrap: wrap;
   }
 
   li {
     display: block;
-    float: left;
-    margin-left: -1px;
+    margin: 0;
 
     a {
-      margin-bottom: 0.25em;
-      padding: 0.5em 1em;
+      display: inline-block;
+      margin-bottom: 0;
+      padding: 0.7em 1.2em;
       font-family: $sans-serif;
-      font-size: 14px;
-      font-weight: bold;
+      font-size: 0.95em;
+      font-weight: 600;
       line-height: 1.5;
       text-align: center;
       text-decoration: none;
-      color: var(--global-text-color-light);
-      border: 1px solid var(--global-border-color);
-      border-radius: 0;
+      color: #3498db;
+      background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.05));
+      border: 1px solid #3498db;
+      border-radius: 6px;
+      transition: all 0.3s ease;
 
       &:hover {
-        color: var(--global-link-color-hover);
+        color: #fff;
+        background: linear-gradient(135deg, #3498db, #2980b9);
+        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+        transform: translateY(-2px);
       }
 
       &.current {
         color: #fff;
-        background: var(--global-base-color);
+        background: linear-gradient(135deg, #3498db, #2980b9);
+        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
       }
 
       &.disabled {
-        color: var(--global-text-color-light);
+        color: #bdc3c7;
+        background: #f5f7fa;
+        border-color: #e1e8ed;
         pointer-events: none;
+        cursor: not-allowed;
+      }
+    }
+  }
+}
         cursor: not-allowed;
       }
     }

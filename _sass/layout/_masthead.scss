@@ -8,7 +8,9 @@
   height: fit-content;
   top: 0;
   width: 100%;
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.1);
+  backdrop-filter: blur(10px);
+  background: rgba(255, 255, 255, 0.95);
 
   -webkit-animation: intro 0.3s both;
           animation: intro 0.3s both;
@@ -20,8 +22,8 @@
     content: "";
     position: absolute;
     bottom: 0;
-    height: 1px;
-    background: var(--global-border-color);
+    height: 2px;
+    background: linear-gradient(to right, #3498db, transparent);
     width: 100%;
   }
 

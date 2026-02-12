@@ -1,0 +1,645 @@
+/* ==========================================================================
+   LAYOUT ENHANCEMENTS - 全面布局优化
+   ========================================================================== */
+
+/* ========================================================================== 
+   1. 首页Hero区域
+   ========================================================================== */
+
+.home-hero {
+  text-align: center;
+  padding: 3em 1.5em;
+  margin: 0 -1.2em 3em;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.08) 0%, rgba(155, 89, 182, 0.05) 100%);
+  border-bottom: 2px solid #ecf0f1;
+  animation: slideDown 0.6s ease-out;
+
+  @include breakpoint($medium) {
+    padding: 4em 2.5em;
+    margin: 0 -1.5em 4em;
+  }
+
+  h1 {
+    font-size: 2.5em;
+    margin: 0 0 0.5em;
+    color: #2c3e50;
+    background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  .subtitle {
+    font-size: 1.2em;
+    color: #7f8c8d;
+    margin-bottom: 2em;
+  }
+}
+
+/* ========================================================================== 
+   2. 内容卡片
+   ========================================================================== */
+
+.content-card {
+  background: var(--global-bg-color);
+  border: 1px solid #ecf0f1;
+  border-radius: 8px;
+  padding: 1.8em;
+  margin: 1.5em 0;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  &:hover {
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.15);
+    transform: translateY(-4px);
+    border-color: #3498db;
+  }
+
+  h3 {
+    margin-top: 0;
+    color: #3498db;
+    font-size: 1.3em;
+  }
+
+  p {
+    margin-bottom: 0;
+    color: #5a6c7d;
+  }
+}
+
+/* ========================================================================== 
+   3. 代码块优化
+   ========================================================================== */
+
+pre {
+  background: linear-gradient(to bottom, #f5f7fa, #f0f3f8);
+  border: 1px solid #e1e8ed;
+  border-radius: 6px;
+  padding: 1.5em;
+  margin: 1.8em 0;
+  font-size: 0.9em;
+  line-height: 1.6;
+  overflow-x: auto;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.05);
+
+  code {
+    font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace;
+    color: #2c3e50;
+    background: transparent;
+    border: none;
+    padding: 0;
+  }
+
+  &::-webkit-scrollbar {
+    height: 6px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: #f5f7fa;
+    border-radius: 3px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #bdc3c7;
+    border-radius: 3px;
+
+    &:hover {
+      background: #95a5a6;
+    }
+  }
+}
+
+/* ========================================================================== 
+   4. 列表优化
+   ========================================================================== */
+
+ul, ol {
+  line-height: 1.9;
+
+  li {
+    margin-bottom: 0.8em;
+    color: #2c3e50;
+
+    &::marker {
+      color: #3498db;
+      font-weight: 600;
+    }
+
+    p {
+      display: inline;
+      margin: 0;
+    }
+
+    ul, ol {
+      margin-top: 0.8em;
+      margin-left: 1.5em;
+    }
+  }
+}
+
+/* ========================================================================== 
+   5. 表格优化
+   ========================================================================== */
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  margin: 1.8em 0;
+  font-size: 0.95em;
+  border-radius: 6px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+
+  th {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.1) 0%, rgba(155, 89, 182, 0.05) 100%);
+    padding: 1em;
+    text-align: left;
+    font-weight: 600;
+    color: #2c3e50;
+    border-bottom: 2px solid #3498db;
+  }
+
+  td {
+    padding: 0.9em 1em;
+    border-bottom: 1px solid #ecf0f1;
+    color: #5a6c7d;
+  }
+
+  tbody tr:hover {
+    background: linear-gradient(to right, rgba(52, 152, 219, 0.05), transparent);
+  }
+
+  tbody tr:last-child td {
+    border-bottom: none;
+  }
+}
+
+/* ========================================================================== 
+   6. 存档和列表项
+   ========================================================================== */
+
+.archive__item {
+  margin-bottom: 2em;
+  padding: 1.5em;
+  border-left: 4px solid #3498db;
+  background: rgba(52, 152, 219, 0.02);
+  border-radius: 0 6px 6px 0;
+  transition: all 0.3s ease;
+
+  &:hover {
+    transform: translateX(8px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.1);
+    background: rgba(52, 152, 219, 0.05);
+  }
+}
+
+.archive__item-title {
+  font-size: 1.1em;
+  font-weight: 600;
+  margin: 0.3em 0 0.8em;
+  transition: color 0.2s ease;
+
+  a {
+    color: #2c3e50;
+    text-decoration: none;
+
+    &:hover {
+      color: #3498db;
+      text-decoration: underline;
+    }
+  }
+}
+
+.archive__item-excerpt {
+  font-size: 0.95em;
+  color: #7f8c8d;
+  line-height: 1.6;
+  margin-bottom: 0.8em;
+}
+
+/* ========================================================================== 
+   7. 分类和标签
+   ========================================================================== */
+
+.taxonomy__section {
+  margin-bottom: 3em;
+
+  h2 {
+    border-bottom: 3px solid #3498db;
+    padding-bottom: 0.8em;
+    margin-bottom: 1.5em;
+  }
+}
+
+.taxonomy__item {
+  display: inline-block;
+  margin-right: 0.8em;
+  margin-bottom: 0.8em;
+  padding: 0.5em 1em;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.1), rgba(155, 89, 182, 0.05));
+  border: 1px solid #3498db;
+  border-radius: 20px;
+  color: #2c3e50;
+  text-decoration: none;
+  font-weight: 500;
+  transition: all 0.3s ease;
+
+  &:hover {
+    background: linear-gradient(135deg, #3498db, #2980b9);
+    color: #fff;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+  }
+}
+
+/* ========================================================================== 
+   8. 按钮优化
+   ========================================================================== */
+
+.btn {
+  display: inline-block;
+  padding: 0.8em 1.8em;
+  background: linear-gradient(135deg, #3498db, #2980b9);
+  color: #fff;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+
+  &:hover {
+    background: linear-gradient(135deg, #2980b9, #1f618d);
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(52, 152, 219, 0.4);
+  }
+
+  &--secondary {
+    background: transparent;
+    color: #3498db;
+    border: 2px solid #3498db;
+    box-shadow: none;
+
+    &:hover {
+      background: #3498db;
+      color: #fff;
+      box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+    }
+  }
+
+  &--outline {
+    background: transparent;
+    color: #2c3e50;
+    border: 2px solid #2c3e50;
+
+    &:hover {
+      background: #2c3e50;
+      color: #fff;
+    }
+  }
+}
+
+/* ========================================================================== 
+   9. 分割线和装饰
+   ========================================================================== */
+
+hr {
+  border: none;
+  height: 2px;
+  background: linear-gradient(to right, transparent, #3498db, transparent);
+  margin: 2.5em 0;
+}
+
+/* ========================================================================== 
+   10. 动画效果
+   ========================================================================== */
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* ========================================================================== 
+   11. 响应式微调
+   ========================================================================== */
+
+@media (max-width: 768px) {
+  .home-hero {
+    padding: 2.5em 1em;
+    margin: 0 -1.2em 2.5em;
+
+    h1 {
+      font-size: 1.8em;
+    }
+
+    .subtitle {
+      font-size: 1.05em;
+    }
+  }
+
+  .content-card {
+    padding: 1.2em;
+  }
+
+  pre {
+    padding: 1em;
+    font-size: 0.85em;
+  }
+
+  table {
+    font-size: 0.9em;
+
+    th, td {
+      padding: 0.7em;
+    }
+  }
+
+  .archive__item {
+    padding: 1em;
+  }
+}
+
+/* ========================================================================== 
+   12. 深色主题支持
+   ========================================================================== */
+
+@media (prefers-color-scheme: dark) {
+  .home-hero {
+    background: linear-gradient(135deg, rgba(52, 152, 219, 0.15) 0%, rgba(155, 89, 182, 0.1) 100%);
+  }
+
+  .content-card {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: rgba(52, 152, 219, 0.2);
+  }
+
+  pre {
+    background: linear-gradient(to bottom, rgba(52, 152, 219, 0.05), rgba(52, 152, 219, 0.03));
+    border-color: rgba(52, 152, 219, 0.2);
+  }
+
+  table {
+    th {
+      background: rgba(52, 152, 219, 0.15);
+      border-color: rgba(52, 152, 219, 0.3);
+    }
+
+    td {
+      border-color: rgba(52, 152, 219, 0.1);
+    }
+  }
+
+  .archive__item {
+    background: rgba(52, 152, 219, 0.05);
+    border-color: rgba(52, 152, 219, 0.3);
+  }
+}
+
+/* ========================================================================== 
+   13. 引用块优化
+   ========================================================================== */
+
+blockquote {
+  margin: 1.8em 0;
+  padding: 1.2em 1.5em;
+  border-left: 4px solid #3498db;
+  background: linear-gradient(to right, rgba(52, 152, 219, 0.08), transparent);
+  border-radius: 0 6px 6px 0;
+  font-style: italic;
+  color: #5a6c7d;
+
+  & + p {
+    margin-top: 0;
+  }
+
+  a {
+    color: #3498db;
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
+
+/* ========================================================================== 
+   14. 作者信息卡片
+   ========================================================================== */
+
+.author-card {
+  padding: 1.5em;
+  margin: 2em 0;
+  background: linear-gradient(135deg, rgba(52, 152, 219, 0.08) 0%, rgba(155, 89, 182, 0.05) 100%);
+  border: 1px solid #e1e8ed;
+  border-radius: 8px;
+  text-align: center;
+
+  .author__avatar {
+    margin-bottom: 1em;
+
+    img {
+      width: 100px;
+      height: 100px;
+      border-radius: 50%;
+      border: 3px solid #3498db;
+      transition: transform 0.3s ease;
+
+      &:hover {
+        transform: scale(1.05);
+      }
+    }
+  }
+
+  .author__name {
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #2c3e50;
+    margin: 0.5em 0;
+  }
+
+  .author__bio {
+    color: #7f8c8d;
+    font-size: 0.95em;
+    margin: 0.8em 0;
+  }
+}
+
+/* ========================================================================== 
+   15. 导航增强
+   ========================================================================== */
+
+.nav-section {
+  margin-bottom: 2em;
+  padding-bottom: 1.5em;
+  border-bottom: 1px solid #ecf0f1;
+
+  h3 {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #95a5a6;
+    margin-bottom: 1em;
+    font-weight: 600;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+
+    li {
+      margin-bottom: 0.5em;
+
+      a {
+        display: block;
+        padding: 0.6em 1em;
+        border-radius: 4px;
+        color: #2c3e50;
+        text-decoration: none;
+        transition: all 0.3s ease;
+
+        &:hover {
+          background: rgba(52, 152, 219, 0.1);
+          color: #3498db;
+          padding-left: 1.5em;
+        }
+
+        &.active {
+          background: rgba(52, 152, 219, 0.15);
+          color: #3498db;
+          font-weight: 600;
+          border-left: 3px solid #3498db;
+          padding-left: 0.7em;
+        }
+      }
+    }
+  }
+}
+
+/* ========================================================================== 
+   16. 流体排版
+   ========================================================================== */
+
+h1 {
+  font-size: clamp(1.8em, 5vw, 2.8em);
+}
+
+h2 {
+  font-size: clamp(1.4em, 4vw, 2em);
+}
+
+h3 {
+  font-size: clamp(1.1em, 3vw, 1.4em);
+}
+
+/* ========================================================================== 
+   17. 空间和布局改进
+   ========================================================================== */
+
+.page__content {
+  > h2:first-child {
+    margin-top: 0;
+  }
+
+  > p:first-of-type {
+    font-size: 1.1em;
+    line-height: 1.9;
+    color: #34495e;
+    margin-bottom: 1.8em;
+  }
+}
+
+section {
+  margin-bottom: 2.5em;
+  padding-bottom: 2em;
+  border-bottom: 1px solid #ecf0f1;
+
+  &:last-child {
+    border-bottom: none;
+    margin-bottom: 0;
+    padding-bottom: 0;
+  }
+}
+
+/* ========================================================================== 
+   18. 页脚增强
+   ========================================================================== */
+
+.page__footer {
+  margin-top: 4em;
+  padding-top: 2em;
+  border-top: 2px solid #ecf0f1;
+
+  footer {
+    text-align: center;
+    color: #7f8c8d;
+    font-size: 0.9em;
+
+    p {
+      margin: 0.5em 0;
+    }
+
+    a {
+      color: #3498db;
+      text-decoration: none;
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+  }
+}
+
+/* ========================================================================== 
+   19. 打印样式
+   ========================================================================== */
+
+@media print {
+  .masthead,
+  .sidebar,
+  .page__share,
+  .page__related,
+  .comments,
+  .btn--secondary,
+  .btn--outline {
+    display: none;
+  }
+
+  .page {
+    @include span(12 of 12);
+  }
+
+  a {
+    color: inherit;
+    text-decoration: underline;
+  }
+
+  pre {
+    box-shadow: none;
+    border: 1px solid #ccc;
+  }
+}
