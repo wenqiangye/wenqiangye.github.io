@@ -747,20 +747,22 @@ button:not(.theme-toggle-btn):hover {
   box-sizing: border-box;
 }
 
-/* 在大屏幕上 (1024px+) 为左侧固定侧边栏预留空间 */
+/* 在大屏幕上 (1024px+) 为左侧固定侧边栏预留空间，与导航栏对齐 */
 @media screen and (min-width: 1024px) {
   #main {
-    margin: 10px auto auto 250px; /* 为sidebar预留空间 + 右边auto居中 */
-    max-width: 1000px; /* 为sidebar留出空间后的更大宽度 */
-    width: calc(100% - 250px); /* 减去sidebar的宽度 */
+    /* 与导航栏内容对齐，为sidebar预留空间 */
+    margin: 10px auto auto calc(50vw - 390px);  /* 50vw - 640px + 250px */
+    width: auto;
+    max-width: 1000px;
   }
 }
 
 /* 在超大屏幕上进一步调整 */
-@media screen and (min-width: 1366px) {
+@media screen and (min-width: 1280px) {
   #main {
-    margin: 10px auto auto 280px; /* 为sidebar预留空间 + 右边auto居中 */
-    width: calc(100% - 280px); /* 减去sidebar的宽度 */
+    margin: 10px auto auto calc((100vw - 1280px) / 2 + 250px);  /* 导航栏左边界 + sidebar宽度 */
+    width: auto;
+    max-width: 1000px;
   }
 }
 
@@ -818,10 +820,11 @@ button:not(.theme-toggle-btn):hover {
   margin: 5px 0;
 }
 
-/* 确保侧边栏在固定位置清晰显示 */
+/* 确保侧边栏在固定位置清晰显示，与导航栏内容对齐 */
 @media screen and (min-width: 1024px) {
   .sidebar {
-    left: 0;
+    /* 与导航栏内容对齐 */
+    left: calc(50vw - 640px);  /* 导航栏内容max-width 1280px, 居中对齐 */
     width: 250px;
     top: 70px; /* 从导航栏下方开始 */
     height: calc(100vh - 70px);
@@ -830,6 +833,13 @@ button:not(.theme-toggle-btn):hover {
     flex-direction: column;
     align-items: center;
     text-align: center;
+  }
+}
+
+/* 在超大屏幕上调整sidebar和main的对齐 */
+@media screen and (min-width: 1280px) {
+  .sidebar {
+    left: calc((100vw - 1280px) / 2);
   }
 }
 
