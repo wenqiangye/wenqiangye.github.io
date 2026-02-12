@@ -774,12 +774,12 @@ button:not(.theme-toggle-btn):hover {
 
 /* 文章内容与sidebar的间距 */
 article.page {
-  margin-left: 20px; /* 与sidebar sticky保持间距 */
+  margin-left: 5px; /* 与sidebar sticky紧凑排列 */
 }
 
 @media screen and (min-width: 1024px) {
   article.page {
-    margin-left: 30px; /* 大屏幕时增加间距 */
+    margin-left: 10px; /* 大屏幕时保持紧凑间距 */
   }
 }
 
