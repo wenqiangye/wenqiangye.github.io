@@ -10,11 +10,27 @@ layout: compress
     {% include head.html %}
     {% include head/custom.html %}
 
+    <script>
+      // 在加载任何内容前恢复主题
+      (function() {
+        const savedTheme = localStorage.getItem('theme');
+        const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+        const shouldBeDark = savedTheme === 'dark' || (savedTheme === null && prefersDark);
+        
+        if (shouldBeDark) {
+          document.documentElement.setAttribute('data-theme', 'dark');
+        }
+      })();
+    </script>
+
   </head>
 
   <body>
     <!-- Particle Background -->
     <canvas id="particles-canvas"></canvas>
+
+    <!-- 主题切换按钮 -->
+    <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode"></button>
 
     <script>
       // 立即初始化Canvas

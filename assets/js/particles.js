@@ -188,6 +188,52 @@
     if (canvas) {
       new ParticleBackground('particles-canvas');
     }
+
+    // 初始化主题切换按钮
+    initThemeToggle();
+  }
+
+  // 主题切换函数
+  function initThemeToggle() {
+    const toggleBtn = document.getElementById('theme-toggle-btn');
+    if (!toggleBtn) return;
+
+    // 设置按钮的data-theme属性，保持与html同步
+    const html = document.documentElement;
+    function syncTheme() {
+      const isDark = html.getAttribute('data-theme') === 'dark';
+      if (isDark) {
+        toggleBtn.setAttribute('data-theme', 'dark');
+      } else {
+        toggleBtn.removeAttribute('data-theme');
+      }
+    }
+
+    // 初始同步
+    syncTheme();
+
+    // 切换主题
+    toggleBtn.addEventListener('click', () => {
+      const html = document.documentElement;
+      const isDark = html.getAttribute('data-theme') === 'dark';
+
+      if (isDark) {
+        html.removeAttribute('data-theme');
+        localStorage.setItem('theme', 'light');
+      } else {
+        html.setAttribute('data-theme', 'dark');
+        localStorage.setItem('theme', 'dark');
+      }
+
+      syncTheme();
+    });
+
+    // 监听系统主题变化（可选）
+    if (window.matchMedia) {
+      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
+        syncTheme();
+      });
+    }
   }
 
   // 多种方式确保脚本运行
