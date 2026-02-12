@@ -723,4 +723,75 @@ button:not(.theme-toggle-btn):hover {
 
 [data-theme="dark"] button:not(.theme-toggle-btn) {
   background: linear-gradient(135deg, var(--aries-red), var(--aries-orange));
+}}
+
+/* ============================================
+   布局修复 - 解决左侧人物介绍与右侧内容重叠
+   ============================================ */
+
+/* 主内容区域: 为固定的作者侧边栏预留空间 */
+#main {
+  margin-top: 70px; /* 为固定导航栏预留空间 */
+}
+
+/* 在大屏幕上 (1024px+) 为左侧固定侧边栏预留空间 */
+@media screen and (min-width: 1024px) {
+  #main {
+    margin-left: 250px; /* 与sidebar-link-max-width保持一致 */
+    margin-top: 70px;
+  }
+}
+
+/* 在超大屏幕上进一步调整 */
+@media screen and (min-width: 1366px) {
+  #main {
+    margin-left: 280px; /* 为更大屏幕增加更多空间 */
+  }
+}
+
+/* 页面容器: 确保不被导航栏遮挡 */
+.page {
+  margin-top: 0;
+  clear: both; /* 清除浮动影响 */
+}
+
+/* 作者个人资料块样式优化 */
+.author__content {
+  max-width: 240px;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+
+/* 确保侧边栏在固定位置清晰显示 */
+@media screen and (min-width: 1024px) {
+  .sidebar {
+    left: 0;
+    width: 250px;
+    top: 70px; /* 从导航栏下方开始 */
+    height: calc(100vh - 70px);
+  }
+}
+
+/* 响应式调整: 中等屏幕 */
+@media screen and (max-width: 1023px) {
+  #main {
+    margin-left: 0;
+    margin-top: 100px;
+  }
+  
+  .sidebar {
+    position: relative !important;
+    width: 100%;
+    height: auto;
+    margin-bottom: 2em;
+  }
+}
+
+/* 响应式调整: 小屏幕 */
+@media screen and (max-width: 768px) {
+  #main {
+    margin-top: 100px;
+    padding-left: 1em;
+    padding-right: 1em;
+  }
 }
