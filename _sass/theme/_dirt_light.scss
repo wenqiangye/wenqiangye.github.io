@@ -1,31 +1,31 @@
-$primary-color              : #343434;
+$primary-color              : #2c3e50;
 $dark-primary-color         : mix(#000, $primary-color, 40%);
 $darker-primary-color       : mix(#000, $primary-color, 60%);
 $light-primary-color        : mix(#fff, $primary-color, 50%);
 $lighter-primary-color      : mix(#fff, $primary-color, 90%);
-$background                 : #f3f3f3;
-$background-light           : #fafafa;
+$background                 : #f8f9fa;
+$background-light           : #ffffff;
 $background-lighter        : #ffffff;
-$text                      : #343434;
-$text-muted                : #8e8b82;
-$link                      : #343434;
-$link-dark                 : mix(#000, $link, 25%);
-$link-light                : mix(#fff, $link, 25%);
-$footer                    : #e9dcbe;
-$border                    : #e9dcbe;
+$text                      : #2c3e50;
+$text-muted                : #7f8c8d;
+$link                      : #3498db;
+$link-dark                 : #2980b9;
+$link-light                : #85c1e2;
+$footer                    : #ecf0f1;
+$border                    : #e1e8ed;
 $border-light              : mix(#fff, $border, 50%);
 
 /* Color codes used for the site */
-$danger-color               : #d35c5c;
-$info-color                 : #88a4d3;
-$notice-color               : #b49368;
-$success-color              : #6eb958;
-$warning-color              : #e0ac16;
+$danger-color               : #e74c3c;
+$info-color                 : #3498db;
+$notice-color               : #f39c12;
+$success-color              : #27ae60;
+$warning-color              : #e67e22;
 
 /* Other basic settings for the template */
-$border-radius              : 4px;
-$box-shadow                 : 0 1px 1px rgba(0, 0, 0, 0.125);
-$global-transition          : all 0.2s ease-in-out;
+$border-radius              : 8px;
+$box-shadow                 : 0 2px 8px rgba(0, 0, 0, 0.1);
+$global-transition          : all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 $masthead-height            : 70px;
 $navicon-width              : 28px;
 $navicon-height             : 4px;

@@ -77,16 +77,25 @@ textarea,
 select {
   display: inline-block;
   width: 100%;
-  padding: 0.25em;
-  margin-bottom: 0.5em;
+  padding: 0.6em 0.8em;
+  margin-bottom: 0.75em;
   color: var(--global-text-color);
   background-color: #fff;
-  border: 1px solid mix(#fff, #000, 80%);
+  border: 1px solid #e1e8ed;
   border-radius: $border-radius;
-  box-shadow: $box-shadow;
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 1em;
+  line-height: 1.5;
+
+  &:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+  }
 
   &:hover {
-    border-color: var(--global-base-color);
+    border-color: #3498db;
   }
 }
 

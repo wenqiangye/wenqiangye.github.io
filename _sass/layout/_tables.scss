@@ -3,34 +3,46 @@
    ========================================================================== */
 
 table {
-  margin-bottom: 1em;
+  margin-bottom: 1.5em;
   width: 100%;
   font-family: $global-font-family;
   font-size: $type-size-6;
   border-collapse: collapse;
-  border: 1px solid var(--global-border-color);
+  border: 1px solid #e1e8ed;
+  border-radius: $border-radius;
+  overflow: hidden;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 
   & + table {
-    margin-top: 1em;
+    margin-top: 1.5em;
   }
 }
 
 thead {
-  background-color: var(--global-border-color);
-  border-bottom: 1px solid var(--global-border-color);
+  background: linear-gradient(135deg, #3498db 0%, #2980b9 100%);
+  border-bottom: 2px solid #2980b9;
+  color: white;
 }
 
 th {
-  padding: 0.5em;
-  font-weight: bold;
+  padding: 0.8em;
+  font-weight: 600;
   text-align: left;
-  border-right: 1px solid var(--global-border-color);
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
 }
 
 td {
-  padding: 0.5em;
-  border-bottom: 1px solid var(--global-border-color);
-  border-right: 1px solid var(--global-border-color);
+  padding: 0.8em;
+  border-bottom: 1px solid #e1e8ed;
+  border-right: 1px solid #e1e8ed;
+}
+
+tbody tr {
+  transition: background-color 0.3s ease;
+
+  &:hover {
+    background-color: rgba(52, 152, 219, 0.05);
+  }
 }
 
 tr, td, th {

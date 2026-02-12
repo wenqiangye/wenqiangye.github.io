@@ -51,8 +51,15 @@
 .page__content {
 
   h2 {
-    padding-bottom: 0.5em;
-    border-bottom: 1px solid var(--global-border-color);
+    padding-bottom: 0.7em;
+    border-bottom: 2px solid #3498db;
+    margin-top: 1.5em;
+  }
+
+  h3 {
+    color: #2c3e50;
+    padding-bottom: 0.4em;
+    border-bottom: 1px solid #e1e8ed;
   }
 
   p, li, dl {
@@ -73,13 +80,17 @@
   }
 
   a {
-    text-decoration: underline;
+    text-decoration: none;
+    color: #3498db;
+    border-bottom: 2px solid transparent;
+    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
     &:hover {
-      text-decoration: underline;
+      color: #2980b9;
+      border-bottom-color: #3498db;
 
       img {
-        box-shadow: 0 0 10px rgba(#000, 0.25);
+        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
       }
     }
   }

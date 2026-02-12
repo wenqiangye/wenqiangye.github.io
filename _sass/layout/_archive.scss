@@ -28,14 +28,15 @@
 }
 
 .archive__subtitle {
-  margin: 1.414em 0 0;
-  padding-bottom: 0.5em;
+  margin: 2em 0 1.2em;
+  padding-bottom: 0.8em;
   font-size: $type-size-5;
-  color: var(--global-text-color-light);
-  border-bottom: 1px solid var(--global-border-color);
+  font-weight: 600;
+  color: #2c3e50;
+  border-bottom: 2px solid #3498db;
 
   + .list__item .archive__item-title {
-    margin-top: 0.5em;
+    margin-top: 1em;
   }
 }
 
@@ -76,8 +77,10 @@
 
 .archive__item:hover {
   .archive__item-teaser {
-    box-shadow: 0 0 10px rgba(#000, 0.25);
+    box-shadow: 0 6px 20px rgba(52, 152, 219, 0.2);
+    transform: translateY(-4px);
   }
+}
 
   .archive__item-title {
     text-decoration: underline;

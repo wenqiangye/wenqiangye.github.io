@@ -12,14 +12,17 @@
 
 @mixin notice($notice-color) {
   margin: 2em 0 !important;  /* override*/
-  padding: 1em;
+  padding: 1.2em 1.5em;
   font-family: $global-font-family;
   font-size: $type-size-6 !important;
   text-indent: initial; /* override*/
-  background-color: mix(#fff, $notice-color, 90%);
+  background: linear-gradient(135deg, mix(#fff, $notice-color, 95%) 0%, mix(#fff, $notice-color, 92%) 100%);
+  border: 1px solid mix(#fff, $notice-color, 70%);
+  border-left: 4px solid $notice-color;
   border-radius: $border-radius;
-  box-shadow: 0 1px 1px rgba($notice-color, 0.25);
+  box-shadow: 0 3px 12px rgba($notice-color, 0.15);
   color: var(--global-code-text-color);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
 
   h4 {
     margin-top: 0 !important; /* override*/
