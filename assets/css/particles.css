@@ -772,6 +772,17 @@ button:not(.theme-toggle-btn):hover {
   clear: both; /* 清除浮动影响 */
 }
 
+/* 文章内容与sidebar的间距 */
+article.page {
+  margin-left: 20px; /* 与sidebar sticky保持间距 */
+}
+
+@media screen and (min-width: 1024px) {
+  article.page {
+    margin-left: 30px; /* 大屏幕时增加间距 */
+  }
+}
+
 /* 作者个人资料块样式优化 */
 .author__content {
   max-width: 240px;
