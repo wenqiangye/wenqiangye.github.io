@@ -750,17 +750,17 @@ button:not(.theme-toggle-btn):hover {
 /* 在大屏幕上 (1024px+) 为左侧固定侧边栏预留空间，与导航栏对齐 */
 @media screen and (min-width: 1024px) {
   #main {
-    /* 与导航栏内容对齐，为sidebar预留空间 */
-    margin: 10px 0 auto calc(50vw - 390px);
+    /* 与导航栏中Projects阿堰不多栢3项目对齐 */
+    margin: 10px 0 auto calc(50vw - 240px);
     width: auto;
     max-width: 1000px;
   }
-}
+}}
 
 /* 在超大屏幕上进一步调整 */
 @media screen and (min-width: 1280px) {
   #main {
-    margin: 10px 0 auto calc((100vw - 1280px) / 2 + 250px);
+    margin: 10px 0 auto calc((100vw - 1280px) / 2 + 300px);
     width: auto;
     max-width: 1000px;
   }
