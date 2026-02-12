@@ -750,7 +750,7 @@ button:not(.theme-toggle-btn):hover {
 /* 在大屏幕上 (1024px+) 为左侧固定侧边栏预留空间 */
 @media screen and (min-width: 1024px) {
   #main {
-    margin-left: 250px; /* 与sidebar-link-max-width保持一致 */
+    margin: 10px auto auto 250px; /* 为sidebar预留空间 + 右边auto居中 */
     max-width: 1000px; /* 为sidebar留出空间后的更大宽度 */
     width: calc(100% - 250px); /* 减去sidebar的宽度 */
   }
@@ -759,7 +759,7 @@ button:not(.theme-toggle-btn):hover {
 /* 在超大屏幕上进一步调整 */
 @media screen and (min-width: 1366px) {
   #main {
-    margin-left: 280px; /* 为更大屏幕增加更多空间 */
+    margin: 10px auto auto 280px; /* 为sidebar预留空间 + 右边auto居中 */
     width: calc(100% - 280px); /* 减去sidebar的宽度 */
   }
 }
@@ -843,7 +843,7 @@ button:not(.theme-toggle-btn):hover {
   
   .sidebar {
     position: relative !important;
-    width: 100%;
+    width: auto;
     height: auto;
     margin: 0 auto 2em auto;
     padding: 2em 1.5em;
