@@ -1,14 +1,50 @@
-/* Particle Background Styles */
+/* ============================================
+   Particle Background and Theme Styles
+   ============================================ */
+
+/* CSS 变量定义 */
+:root {
+  --light-bg: #ffffff;
+  --light-text: #202122;
+  --light-text-secondary: #565656;
+  --light-border: #e8e8e8;
+  --light-accent: #3273dc;
+  --light-gradient-start: #f5f7fa;
+  --light-gradient-end: #c3cfe2;
+  
+  --dark-bg: #1a1a2e;
+  --dark-text: #f0f0f0;
+  --dark-text-secondary: #b0b0b0;
+  --dark-border: #404060;
+  --dark-accent: #5ba3ff;
+  --dark-gradient-start: #1e1e2e;
+  --dark-gradient-end: #2d2d3d;
+}
+
+/* 亮色模式 */
 html {
   background: transparent;
+  color-scheme: light;
 }
 
 body {
   margin: 0;
   padding: 0;
   background: transparent;
+  color: var(--light-text);
+  transition: color 0.4s ease, background-color 0.4s ease;
 }
 
+/* 暗色模式 */
+[data-theme="dark"] {
+  color-scheme: dark;
+}
+
+[data-theme="dark"] body {
+  color: var(--dark-text);
+}
+
+/* Canvas 背景 */
 #particles-canvas {
   display: block;
   position: fixed;
@@ -20,7 +56,11 @@ body {
   pointer-events: none;
 }
 
-/* 固定导航栏 */
+[data-theme="dark"] #particles-canvas {
+  filter: invert(1) hue-rotate(180deg) brightness(0.9);
+}
+
+/* 固定导航栏 - 亮色模式 */
 .masthead {
   position: fixed !important;
   top: 0;
@@ -28,25 +68,53 @@ body {
   right: 0;
   width: 100%;
   z-index: 1000;
-  background: rgba(255, 255, 255, 0.98);
-  backdrop-filter: blur(10px);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.08);
+  transition: all 0.4s ease;
 }
 
 /* 暗色主题导航栏 */
 [data-theme="dark"] .masthead {
-  background: rgba(30, 30, 46, 0.98);
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  background: rgba(26, 26, 46, 0.95);
+  box-shadow: 0 2px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* 导航栏内部链接 */
+.masthead a,
+.masthead__menu-item {
+  color: var(--light-text);
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .masthead a,
+[data-theme="dark"] .masthead__menu-item {
+  color: var(--dark-text);
+}
+
+/* 导航栏链接悬停 */
+.masthead a:hover {
+  color: var(--light-accent);
+}
+
+[data-theme="dark"] .masthead a:hover {
+  color: var(--dark-accent);
+}
+
+/* 主题图标 */
+#theme-icon {
+  transition: transform 0.3s ease, color 0.3s ease;
+  color: var(--light-text);
+}
+
+[data-theme="dark"] #theme-icon {
+  color: var(--dark-text);
+  transform: rotate(-20deg);
 }
 
 /* 调整body内容顶部距离 */
 body {
   padding-top: 60px;
-}
-
-/* 为粒子添加滤镜效果（暗色主题） */
-[data-theme="dark"] #particles-canvas {
-  filter: invert(1) hue-rotate(180deg) brightness(0.9);
 }
 
 /* 确保所有内容在粒子上方 */
@@ -58,7 +126,144 @@ main,
   z-index: 1;
 }
 
-/* 主题切换按钮 */
+/* 页脚样式 - 亮色模式 */
+.page__footer {
+  background: rgba(248, 248, 248, 0.85);
+  color: var(--light-text-secondary);
+  border-top: 1px solid var(--light-border);
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+[data-theme="dark"] .page__footer {
+  background: rgba(26, 26, 46, 0.9);
+  color: var(--dark-text-secondary);
+  border-top: 1px solid var(--dark-border);
+}
+
+/* 页脚链接 */
+.page__footer a {
+  color: var(--light-accent);
+  transition: color 0.3s ease;
+}
+
+[data-theme="dark"] .page__footer a {
+  color: var(--dark-accent);
+}
+
+.page__footer a:hover {
+  opacity: 0.8;
+}
+
+/* 页面内容区域 */
+.page__content {
+  background: rgba(255, 255, 255, 0.5);
+  transition: background-color 0.4s ease;
+  border-radius: 8px;
+  margin: 20px;
+  padding: 20px;
+}
+
+[data-theme="dark"] .page__content {
+  background: rgba(26, 26, 46, 0.4);
+}
+
+/* 所有文本元素的颜色过渡 */
+p, h1, h2, h3, h4, h5, h6 {
+  transition: color 0.4s ease;
+}
+
+/* 链接样式 */
+a {
+  color: var(--light-accent);
+  transition: color 0.3s ease;
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--light-accent);
+  opacity: 0.8;
+}
+
+[data-theme="dark"] a {
+  color: var(--dark-accent);
+}
+
+[data-theme="dark"] a:hover {
+  opacity: 0.8;
+}
+
+/* 代码块和高亮 */
+code, pre {
+  background-color: rgba(0, 0, 0, 0.05);
+  border: 1px solid var(--light-border);
+  transition: background-color 0.4s ease, border-color 0.4s ease;
+  border-radius: 4px;
+}
+
+[data-theme="dark"] code,
+[data-theme="dark"] pre {
+  background-color: rgba(0, 0, 0, 0.3);
+  border-color: var(--dark-border);
+}
+
+/* 表格样式 */
+table {
+  border-collapse: collapse;
+  margin: 15px 0;
+}
+
+table th {
+  background-color: var(--light-border);
+  color: var(--light-text);
+  transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+[data-theme="dark"] table th {
+  background-color: var(--dark-border);
+  color: var(--dark-text);
+}
+
+table td {
+  border-bottom: 1px solid var(--light-border);
+  transition: border-color 0.4s ease;
+}
+
+[data-theme="dark"] table td {
+  border-bottom-color: var(--dark-border);
+}
+
+/* 按钮和表单元素 */
+button, input, textarea, select {
+  background-color: var(--light-bg);
+  color: var(--light-text);
+  border: 1px solid var(--light-border);
+  transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+}
+
+[data-theme="dark"] button,
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
+  background-color: var(--dark-bg);
+  color: var(--dark-text);
+  border-color: var(--dark-border);
+}
+
+/* 块引用样式 */
+blockquote {
+  border-left: 4px solid var(--light-accent);
+  margin: 1em 0;
+  padding: 0.5em 1em;
+  background-color: rgba(0, 0, 0, 0.02);
+  transition: all 0.4s ease;
+}
+
+[data-theme="dark"] blockquote {
+  border-left-color: var(--dark-accent);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+/* 主题切换按钮样式 */
 .theme-toggle-btn {
   position: fixed;
   top: 75px;
@@ -66,14 +271,14 @@ main,
   width: 50px;
   height: 50px;
   border-radius: 50%;
-  border: none;
+  border: 2px solid rgba(255, 165, 0, 0.3);
   cursor: pointer;
   font-size: 24px;
   display: flex;
   align-items: center;
   justify-content: center;
   z-index: 999;
-  transition: all 0.3s ease;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
   background: rgba(255, 255, 255, 0.95);
   box-shadow: 0 0 20px rgba(255, 165, 0, 0.5),
               0 0 40px rgba(255, 200, 0, 0.3),
@@ -85,11 +290,13 @@ main,
   content: '☀️';
   animation: sun-glow 2s ease-in-out infinite;
   display: block;
+  line-height: 1;
 }
 
 /* 暗色模式 - 月亮按钮 */
 [data-theme="dark"] .theme-toggle-btn {
-  background: rgba(30, 30, 46, 0.95);
+  background: rgba(26, 26, 46, 0.95);
+  border-color: rgba(100, 200, 255, 0.3);
   box-shadow: 0 0 20px rgba(100, 200, 255, 0.5),
               0 0 40px rgba(100, 150, 255, 0.3),
               inset 0 0 20px rgba(100, 150, 200, 0.2);
@@ -106,13 +313,13 @@ main,
     text-shadow: 0 0 10px rgba(255, 165, 0, 0.8),
                  0 0 20px rgba(255, 200, 0, 0.6),
                  0 0 30px rgba(255, 100, 0, 0.4);
-    transform: scale(1);
+    transform: scale(1) rotate(0deg);
   }
   50% {
     text-shadow: 0 0 20px rgba(255, 165, 0, 1),
                  0 0 30px rgba(255, 200, 0, 0.8),
                  0 0 40px rgba(255, 100, 0, 0.6);
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(5deg);
   }
 }
 
@@ -122,26 +329,28 @@ main,
     text-shadow: 0 0 10px rgba(100, 200, 255, 0.8),
                  0 0 20px rgba(150, 200, 255, 0.6),
                  0 0 30px rgba(100, 150, 255, 0.4);
-    transform: scale(1);
+    transform: scale(1) rotate(0deg);
   }
   50% {
     text-shadow: 0 0 20px rgba(100, 200, 255, 1),
                  0 0 30px rgba(150, 200, 255, 0.8),
                  0 0 40px rgba(100, 150, 255, 0.6);
-    transform: scale(1.05);
+    transform: scale(1.05) rotate(-5deg);
   }
 }
 
 /* 按钮悬停效果 */
 .theme-toggle-btn:hover {
-  transform: scale(1.1);
+  transform: scale(1.15);
   box-shadow: 0 0 30px rgba(255, 165, 0, 0.8),
-              0 0 50px rgba(255, 200, 0, 0.5);
+              0 0 50px rgba(255, 200, 0, 0.5),
+              0 4px 15px rgba(0, 0, 0, 0.15);
 }
 
 [data-theme="dark"] .theme-toggle-btn:hover {
   box-shadow: 0 0 30px rgba(100, 200, 255, 0.8),
-              0 0 50px rgba(150, 200, 255, 0.5);
+              0 0 50px rgba(150, 200, 255, 0.5),
+              0 4px 15px rgba(0, 0, 0, 0.3);
 }
 
 /* 响应式调整 */
@@ -152,5 +361,25 @@ main,
     font-size: 20px;
     top: 70px;
     right: 15px;
+    border-width: 2px;
+  }
+}
+
+/* 高对比度模式支持 */
+@media (prefers-contrast: more) {
+  :root {
+    --light-text: #000000;
+    --light-text-secondary: #333333;
+    --dark-text: #ffffff;
+    --dark-text-secondary: #e0e0e0;
+  }
+}
+
+/* 动画加载减速器 */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
   }
 }

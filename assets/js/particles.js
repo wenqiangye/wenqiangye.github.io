@@ -110,6 +110,12 @@
       window.addEventListener('resize', () => this.handleResize());
       document.addEventListener('mousemove', (e) => this.handleMouseMove(e));
       document.addEventListener('mouseleave', () => this.handleMouseOut());
+      
+      // 监听主题切换事件
+      document.addEventListener('themechange', (e) => {
+        this.isDarkMode = e.detail.isDark;
+        this.drawBackground();
+      });
     }
 
     handleResize() {
@@ -196,25 +202,56 @@
   // 主题切换函数
   function initThemeToggle() {
     const toggleBtn = document.getElementById('theme-toggle-btn');
-    if (!toggleBtn) return;
-
-    // 设置按钮的data-theme属性，保持与html同步
+    const themeToggleLink = document.getElementById('theme-toggle');
     const html = document.documentElement;
+
+    // 同步主题状态到所有按钮
     function syncTheme() {
       const isDark = html.getAttribute('data-theme') === 'dark';
-      if (isDark) {
-        toggleBtn.setAttribute('data-theme', 'dark');
-      } else {
-        toggleBtn.removeAttribute('data-theme');
+      
+      // 更新新创建的按钮
+      if (toggleBtn) {
+        if (isDark) {
+          toggleBtn.setAttribute('data-theme', 'dark');
+        } else {
+          toggleBtn.removeAttribute('data-theme');
+        }
       }
+
+      // 更新masthead中的图标
+      const themeIcon = document.getElementById('theme-icon');
+      if (themeIcon) {
+        if (isDark) {
+          themeIcon.classList.remove('fa-sun');
+          themeIcon.classList.add('fa-moon');
+        } else {
+          themeIcon.classList.remove('fa-moon');
+          themeIcon.classList.add('fa-sun');
+        }
+      }
+
+      // 触发自定义事件，让粒子背景也能响应
+      document.dispatchEvent(new CustomEvent('themechange', { detail: { isDark } }));
     }
 
     // 初始同步
     syncTheme();
 
-    // 切换主题
-    toggleBtn.addEventListener('click', () => {
-      const html = document.documentElement;
+    // 新按钮点击事件
+    if (toggleBtn) {
+      toggleBtn.addEventListener('click', toggleDarkMode);
+    }
+
+    // masthead主题切换点击事件
+    if (themeToggleLink) {
+      themeToggleLink.addEventListener('click', (e) => {
+        e.preventDefault();
+        toggleDarkMode();
+      });
+    }
+
+    // 主题切换函数
+    function toggleDarkMode() {
       const isDark = html.getAttribute('data-theme') === 'dark';
 
       if (isDark) {
@@ -226,13 +263,26 @@
       }
 
       syncTheme();
-    });
+    }
 
-    // 监听系统主题变化（可选）
+    // 监听系统主题变化
     if (window.matchMedia) {
-      window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', () => {
-        syncTheme();
-      });
+      const darkModeQuery = window.matchMedia('(prefers-color-scheme: dark)');
+      
+      // 处理不同浏览器版本的兼容性
+      if (darkModeQuery.addEventListener) {
+        darkModeQuery.addEventListener('change', (e) => {
+          if (!localStorage.getItem('theme')) {
+            // 仅在用户未手动设置主题时跟随系统
+            if (e.matches) {
+              html.setAttribute('data-theme', 'dark');
+            } else {
+              html.removeAttribute('data-theme');
+            }
+            syncTheme();
+          }
+        });
+      }
     }
   }
 

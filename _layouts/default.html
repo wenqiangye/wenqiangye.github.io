@@ -33,7 +33,7 @@ layout: compress
     <button class="theme-toggle-btn" id="theme-toggle-btn" aria-label="Toggle dark mode"></button>
 
     <script>
-      // 立即初始化Canvas
+      // 立即初始化Canvas背景
       (function() {
         const canvas = document.getElementById('particles-canvas');
         if (canvas) {
@@ -41,9 +41,17 @@ layout: compress
           canvas.height = window.innerHeight;
           const ctx = canvas.getContext('2d');
           if (ctx) {
+            const isDark = document.documentElement.getAttribute('data-theme') === 'dark';
             const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
-            gradient.addColorStop(0, '#f5f7fa');
-            gradient.addColorStop(1, '#c3cfe2');
+            
+            if (isDark) {
+              gradient.addColorStop(0, '#1e1e2e');
+              gradient.addColorStop(1, '#2d2d3d');
+            } else {
+              gradient.addColorStop(0, '#f5f7fa');
+              gradient.addColorStop(1, '#c3cfe2');
+            }
+            
             ctx.fillStyle = gradient;
             ctx.fillRect(0, 0, canvas.width, canvas.height);
           }
