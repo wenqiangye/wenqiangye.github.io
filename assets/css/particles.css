@@ -147,6 +147,7 @@ body {
   max-width: 100%;
   position: relative;
   z-index: 1;
+  align-items: center; /* 水平居中 */
 }
 
 /* 确保所有内容在粒子上方 */
@@ -739,14 +740,19 @@ button:not(.theme-toggle-btn):hover {
 
 /* 主内容区域: 为固定的作者侧边栏预留空间 */
 #main {
-  margin-top: 10px; /* 内容与导航栏之间的间距 */
-  margin-bottom: auto; /* 推动footer到底部 */
+  width: 100%;
+  max-width: 900px; /* 内容最大宽度 */
+  margin: 10px auto auto auto; /* 顶部间距 + 水平居中 + 底部auto推动footer */
+  padding: 0 1.5em;
+  box-sizing: border-box;
 }
 
 /* 在大屏幕上 (1024px+) 为左侧固定侧边栏预留空间 */
 @media screen and (min-width: 1024px) {
   #main {
     margin-left: 250px; /* 与sidebar-link-max-width保持一致 */
+    max-width: 1000px; /* 为sidebar留出空间后的更大宽度 */
+    width: calc(100% - 250px); /* 减去sidebar的宽度 */
   }
 }
 
@@ -754,6 +760,7 @@ button:not(.theme-toggle-btn):hover {
 @media screen and (min-width: 1366px) {
   #main {
     margin-left: 280px; /* 为更大屏幕增加更多空间 */
+    width: calc(100% - 280px); /* 减去sidebar的宽度 */
   }
 }
 
@@ -784,6 +791,8 @@ button:not(.theme-toggle-btn):hover {
 @media screen and (max-width: 1023px) {
   #main {
     margin-left: 0;
+    width: 100%;
+    max-width: 900px;
   }
   
   .sidebar {
@@ -799,5 +808,7 @@ button:not(.theme-toggle-btn):hover {
   #main {
     padding-left: 1em;
     padding-right: 1em;
+    max-width: 100%;
+    width: 100%;
   }
 }
