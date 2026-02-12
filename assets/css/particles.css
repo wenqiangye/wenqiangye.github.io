@@ -779,47 +779,6 @@ button:not(.theme-toggle-btn):hover {
   overflow-wrap: break-word;
 }
 
-/* 作者块整体居中 */
-.author__avatar {
-  text-align: center;
-  margin: 0 auto 15px auto;
-}
-
-.author__avatar img {
-  display: block;
-  margin: 0 auto;
-}
-
-.author__content {
-  text-align: center;
-  margin: 0 auto;
-}
-
-.author__name,
-.author__pronouns,
-.author__bio {
-  text-align: center;
-}
-
-.author__urls-wrapper {
-  text-align: center;
-  margin: 0 auto;
-}
-
-.author__urls {
-  list-style: none;
-  padding: 0;
-  margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.author__urls li {
-  display: block;
-  margin: 5px 0;
-}
-
 /* 确保侧边栏在固定位置清晰显示，与导航栏内容对齐 */
 @media screen and (min-width: 1024px) {
   .sidebar {
@@ -829,10 +788,6 @@ button:not(.theme-toggle-btn):hover {
     top: 70px; /* 从导航栏下方开始 */
     height: calc(100vh - 70px);
     padding: 2em 1.5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
   }
 }
 
@@ -857,10 +812,6 @@ button:not(.theme-toggle-btn):hover {
     height: auto;
     margin: 0 auto 2em auto;
     padding: 2em 1.5em;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     max-width: 300px;
   }
 }
