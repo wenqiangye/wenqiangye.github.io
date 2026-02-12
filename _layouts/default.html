@@ -9,11 +9,42 @@ layout: compress
   <head>
     {% include head.html %}
     {% include head/custom.html %}
+    <style>
+      #particles-canvas {
+        display: block !important;
+        position: fixed !important;
+        top: 0 !important;
+        left: 0 !important;
+        width: 100vw !important;
+        height: 100vh !important;
+        z-index: -100 !important;
+        pointer-events: none !important;
+      }
+    </style>
   </head>
 
   <body>
     <!-- Particle Background -->
     <canvas id="particles-canvas"></canvas>
+
+    <script>
+      // 立即初始化Canvas
+      (function() {
+        const canvas = document.getElementById('particles-canvas');
+        if (canvas) {
+          canvas.width = window.innerWidth;
+          canvas.height = window.innerHeight;
+          const ctx = canvas.getContext('2d');
+          if (ctx) {
+            const gradient = ctx.createLinearGradient(0, 0, canvas.width, canvas.height);
+            gradient.addColorStop(0, '#f5f7fa');
+            gradient.addColorStop(1, '#c3cfe2');
+            ctx.fillStyle = gradient;
+            ctx.fillRect(0, 0, canvas.width, canvas.height);
+          }
+        }
+      })();
+    </script>
 
     {% include browser-upgrade.html %}
     {% include masthead.html %}
@@ -27,6 +58,7 @@ layout: compress
       </footer>
     </div>
 
+    <script src="{{ base_path }}/assets/js/particles.js"></script>
     {% include scripts.html %}
 
   </body>
