@@ -115,6 +115,17 @@ body {
 /* 调整body内容顶部距离 */
 body {
   padding-top: 60px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding-bottom: 200px;
+}
+
+/* 页面内容包装器 - 占据剩余空间 */
+.page__wrapper {
+  flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
 }
 
 /* 确保所有内容在粒子上方 */
@@ -128,16 +139,26 @@ main,
 
 /* 页脚样式 - 亮色模式 */
 .page__footer {
-  background: rgba(248, 248, 248, 0.85);
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  background: rgba(248, 248, 248, 0.95);
   color: var(--light-text-secondary);
   border-top: 1px solid var(--light-border);
   transition: background-color 0.4s ease, color 0.4s ease, border-color 0.4s ease;
+  z-index: 100;
+  padding: 20px 0;
+  backdrop-filter: blur(8px);
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.08);
 }
 
 [data-theme="dark"] .page__footer {
-  background: rgba(26, 26, 46, 0.9);
+  background: rgba(26, 26, 46, 0.95);
   color: var(--dark-text-secondary);
   border-top: 1px solid var(--dark-border);
+  box-shadow: 0 -2px 12px rgba(0, 0, 0, 0.3);
 }
 
 /* 页脚链接 */
@@ -362,6 +383,27 @@ blockquote {
     top: 70px;
     right: 15px;
     border-width: 2px;
+  }
+
+  /* 移动设备上调整页脚大小 */
+  body {
+    padding-bottom: 180px;
+  }
+
+  .page__footer {
+    padding: 15px 0;
+    font-size: 0.9em;
+  }
+}
+
+@media (max-width: 480px) {
+  body {
+    padding-bottom: 220px;
+  }
+
+  .page__footer {
+    padding: 12px 0;
+    font-size: 0.85em;
   }
 }
 
