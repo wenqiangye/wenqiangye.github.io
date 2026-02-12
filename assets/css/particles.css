@@ -742,7 +742,7 @@ button:not(.theme-toggle-btn):hover {
 #main {
   width: 100%;
   max-width: 900px; /* 内容最大宽度 */
-  margin: 10px auto auto auto; /* 顶部间距 + 水平居中 + 底部auto推动footer */
+  margin: 10px 200px auto 0; /* 顶部间距 + 右边200px + 底部auto推动footer + 左边0 */
   padding: 0 1.5em;
   box-sizing: border-box;
 }
@@ -751,7 +751,7 @@ button:not(.theme-toggle-btn):hover {
 @media screen and (min-width: 1024px) {
   #main {
     /* 与导航栏内容对齐，为sidebar预留空间 */
-    margin: 10px auto auto calc(50vw - 390px);  /* 50vw - 640px + 250px */
+    margin: 10px 150px auto calc(50vw - 390px);  /* 50vw - 640px + 250px */
     width: auto;
     max-width: 1000px;
   }
@@ -760,7 +760,7 @@ button:not(.theme-toggle-btn):hover {
 /* 在超大屏幕上进一步调整 */
 @media screen and (min-width: 1280px) {
   #main {
-    margin: 10px auto auto calc((100vw - 1280px) / 2 + 250px);  /* 导航栏左边界 + sidebar宽度 */
+    margin: 10px 100px auto calc((100vw - 1280px) / 2 + 250px);  /* 导航栏左边界 + sidebar宽度 */
     width: auto;
     max-width: 1000px;
   }
