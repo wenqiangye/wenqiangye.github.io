@@ -154,33 +154,15 @@ body {
 
 /* 页面内容包装器 - 占据剩余空间 */
 .page__wrapper {
-  display: flex;
   flex: 1 0 auto;
+  display: flex;
+  flex-direction: column;
   width: 100%;
-  align-items: flex-start;
-  justify-content: flex-start;
-  flex-direction: row; /* 默认横向排列 sidebar + main */
-  gap: 2em; /* 内容间距 */
-
-  /* 大屏幕左侧固定sidebar */
-  @media screen and (max-width: 1023px) {
-    flex-direction: column; /* 小屏幕纵向排列 */
-  }
-}
-
-/* Sidebar */
-.sidebar {
-  width: 250px; /* 固定宽度 */
-  flex-shrink: 0; /* 不收缩 */
-  position: sticky;
-  top: 70px; /* 顶部导航高度 */
-  align-self: flex-start;
-
-  @media screen and (max-width: 1023px) {
-    position: relative;
-    width: 100%;
-    padding: 1em;
-  }
+  max-width: 100%;
+  position: relative;
+  z-index: 1;
+  align-items: stretch;  /* 改为stretch以适应侧边栏竖向布局 */
+  padding: 0 auto;  /* 内部不再padding，由body处理 */
 }
 
 /* 确保所有内容在粒子上方 */
