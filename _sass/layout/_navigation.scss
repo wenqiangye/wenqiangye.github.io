@@ -1,153 +1,7 @@
-/* ==========================================================================
-   NAVIGATION
-   ========================================================================== */
-
-/*
-   Breadcrumb navigation links
-   ========================================================================== */
-
-.breadcrumbs {
-  @include container;
-  @include clearfix;
-  margin-top: 0;
-  margin-bottom: 0;
-  padding-left: 2em;
-  padding-right: 2em;
-  font-family: $sans-serif;
-  font-size: 0.9em;
-  -webkit-animation: intro 0.3s both;
-  animation: intro 0.3s both;
-  -webkit-animation-delay: 0.3s;
-  animation-delay: 0.3s;
-
-  @include breakpoint($large) {
-    padding-left: 1em;
-    padding-right: 1em;
-  }
-
-  @include breakpoint($x-large) {
-    max-width: $x-large;
-  }
-
-  ol {
-    padding: 0;
-    list-style: none;
-    font-size: $type-size-6;
-
-    @include breakpoint($large) {
-      @include span(10 of 12 last);
-    }
-
-    @include breakpoint($x-large) {
-      @include prefix(0.5 of 12);
-    }
-  }
-
-  li {
-    display: inline;
-    margin-right: 0.5em;
-
-    &::after {
-      content: "/";
-      margin-left: 0.5em;
-      color: #bdc3c7;
-    }
-
-    &:last-child::after {
-      content: "";
-    }
-  }
-
-  a {
-    color: #3498db;
-    text-decoration: none;
-    transition: color 0.2s ease;
-
-    &:hover {
-      color: #2980b9;
-      text-decoration: underline;
-    }
-  }
-
-  .current {
-    font-weight: 600;
-    color: #2c3e50;
-  }
-}
-
-.pagination {
-  @include full();
-  @include clearfix();
-  margin-top: 2em;
-  padding-top: 2em;
-  border-top: 2px solid #ecf0f1;
-
-  ul {
-    margin: 0;
-    padding: 0;
-    list-style-type: none;
-    font-family: $sans-serif;
-    display: flex;
-    justify-content: center;
-    gap: 0.5em;
-    flex-wrap: wrap;
-  }
-
-  li {
-    display: block;
-    margin: 0;
-
-    a {
-      display: inline-block;
-      margin-bottom: 0;
-      padding: 0.7em 1.2em;
-      font-family: $sans-serif;
-      font-size: 0.95em;
-      font-weight: 600;
-      line-height: 1.5;
-      text-align: center;
-      text-decoration: none;
-      color: #3498db;
-      background: linear-gradient(
-        135deg,
-        rgba(52, 152, 219, 0.1),
-        rgba(155, 89, 182, 0.05)
-      );
-      border: 1px solid #3498db;
-      border-radius: 6px;
-      transition: all 0.3s ease;
-
-      &:hover {
-        color: #fff;
-        background: linear-gradient(135deg, #3498db, #2980b9);
-        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
-        transform: translateY(-2px);
-      }
-
-      &.current {
-        color: #fff;
-        background: linear-gradient(135deg, #3498db, #2980b9);
-        box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
-      }
-
-      &.disabled {
-        color: #bdc3c7;
-        background: #f5f7fa;
-        border-color: #e1e8ed;
-        pointer-events: none;
-        cursor: not-allowed;
-      }
-    }
-  }
-}
-
-/*
-   Next/previous navigation
-   ========================================================================== */
-
 .nav__wrapper {
   @include clearfix;
 
+  /* 公共分页分隔 */
   .page__content + .pagination,
   .page__meta + .pagination,
   .page__share + .pagination,
@@ -157,147 +11,96 @@
     border-top: 1px solid var(--global-border-color);
   }
 
-  /*
-   Priority plus navigation
-   ========================================================================== */
-
+  /* =====================================================
+     Greedy Nav - 横排桌面 + 小屏折叠
+     ===================================================== */
   .greedy-nav {
     position: relative;
-    min-width: 250px;
-    background: var(--global-bg-color);
     display: flex;
     align-items: center;
     width: 100%;
+    min-width: 250px;
+    background: var(--global-bg-color);
+    padding: 0 1rem;
 
-    a {
-      display: block;
-      margin: 0 1rem;
-      padding: 0.5rem 0;
-      color: var(--global-masthead-link-color);
-      text-decoration: none;
-
-      &:hover {
-        color: var(--global-masthead-link-color-hover);
-      }
-    }
-
-    button {
-      position: absolute;
-      height: 2.5rem;
-      right: 0;
-      padding: 0 0.5rem;
-      border: 0;
-      outline: none;
-      background-color: var(--global-bg-color);
-      color: var(--global-text-color);
-      cursor: pointer;
-      z-index: 100;
-    }
-
+    /* 可见横排菜单 - 桌面显示 */
     .visible-links {
       display: flex;
       align-items: center;
-      gap: 1.5rem; // 控制菜单之间间距
-      padding: 0;
-      margin: 0;
-      list-style: none;
+      gap: 1.5rem;
+      flex: 1;
 
       li {
         display: block;
 
         &:first-child {
           font-weight: bold;
-          margin-right: auto; // 关键：把后面菜单推到右侧
-
+          margin-right: auto; // 推动右侧菜单靠右
           a {
             margin-left: 0;
           }
         }
 
-        &:last-child {
-          a {
-            margin-right: 0;
-          }
-        }
-      }
-
-      #theme-toggle {
         a {
-          width: 25px;
-          display: flex;
-          justify-content: center;
-          cursor: pointer;
-        }
-      }
+          position: relative;
+          text-decoration: none;
+          color: var(--global-masthead-link-color);
+          padding: 0.5rem 0;
 
-      a {
-        position: relative;
+          &:before {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 3px;
+            width: 100%;
+            background: var(--global-border-color);
+            transform: scaleX(0);
+            transition: transform 0.3s ease;
+          }
 
-        &:before {
-          content: "";
-          position: absolute;
-          left: 0;
-          bottom: 0;
-          height: 4px;
-          background: var(--global-border-color);
-          width: 100%;
-          transition: $global-transition;
-          transform: scaleX(0);
-        }
+          &:hover:before {
+            transform: scaleX(1);
+          }
 
-        &:hover:before {
-          transform: scaleX(1);
+          &:hover {
+            color: var(--global-masthead-link-color-hover);
+          }
         }
       }
     }
 
+    /* 汉堡按钮 - 小屏显示 */
+    button.nav-toggle {
+      display: none;
+      background: none;
+      border: none;
+      font-size: 1.5rem;
+      cursor: pointer;
+      color: var(--global-text-color);
+
+      @include breakpoint($medium) {
+        display: block;
+        position: absolute;
+        right: 0;
+        top: 0.5rem;
+        z-index: 200;
+      }
+    }
+
+    /* 隐藏菜单 - 小屏折叠 */
     .hidden-links {
+      display: none;
       position: absolute;
       top: 100%;
       right: 0;
-      margin-top: 15px;
-      padding: 5px;
+      margin-top: 10px;
+      padding: 0.5rem 0;
+      background: var(--global-bg-color);
       border: 1px solid var(--global-border-color);
       border-radius: $border-radius;
-      background: var(--global-bg-color);
-      box-shadow: 0 0 10px rgba(#000, 0.25);
-
-      a {
-        margin: 0;
-        padding: 10px 20px;
-        font-size: $type-size-5;
-
-        &:hover {
-          color: var(--global-masthead-link-color-hover);
-          background: var(--global-border-color);
-        }
-      }
-
-      &:before {
-        content: "";
-        position: absolute;
-        top: -11px;
-        right: 10px;
-        width: 0;
-        border-style: solid;
-        border-width: 0 10px 10px;
-        border-color: var(--global-border-color) transparent;
-        display: block;
-        z-index: 0;
-      }
-
-      &:after {
-        content: "";
-        position: absolute;
-        top: -10px;
-        right: 10px;
-        width: 0;
-        border-style: solid;
-        border-width: 0 10px 10px;
-        border-color: var(--global-bg-color) transparent;
-        display: block;
-        z-index: 1;
-      }
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+      z-index: 150;
 
       li {
         display: block;
@@ -306,14 +109,35 @@
         &:last-child {
           border-bottom: none;
         }
+
+        a {
+          display: block;
+          padding: 0.75rem 1.5rem;
+          color: var(--global-masthead-link-color);
+
+          &:hover {
+            color: var(--global-masthead-link-color-hover);
+            background: var(--global-border-color);
+          }
+        }
+      }
+
+      &.open {
+        display: block;
+      }
+    }
+
+    /* 响应式控制 */
+    @include breakpoint($medium) {
+      .visible-links {
+        display: none; // 小屏隐藏横排菜单
       }
     }
   }
 
-  /*
-   Navigation list
-   ========================================================================== */
-
+  /* =====================================================
+     Nav List & TOC
+     ===================================================== */
   .nav__list {
     font-size: 1.25rem;
 
@@ -365,10 +189,6 @@
     border-bottom: 1px solid var(--global-border-color);
   }
 
-  /*
-   Table of contents navigation
-   ========================================================================== */
-
   .toc {
     font-family: $sans-serif-narrow;
     color: var(--global-text-color-light);
@@ -386,48 +206,45 @@
       border-top-left-radius: $border-radius;
       border-top-right-radius: $border-radius;
     }
-  }
 
-  .toc__menu {
-    margin: 0;
-    padding: 0;
-    width: 100%;
-    list-style: none;
-    font-size: 0.8rem;
+    .toc__menu {
+      margin: 0;
+      padding: 0;
+      width: 100%;
+      list-style: none;
+      font-size: 0.8rem;
 
-    a {
-      display: block;
-      padding: 0.5rem 1rem;
-      color: var(--global-code-text-color);
-      font-size: $type-size-7;
-      font-weight: bold;
-      line-height: 1.5;
-      border-bottom: 1px solid var(--global-border-color);
-      text-decoration-line: none !important;
-
-      &:hover {
-        color: #000;
-        background: var(--global-link-color-hover);
-      }
-    }
-
-    > li:last-child {
       a {
+        display: block;
+        padding: 0.5rem 1rem;
+        color: var(--global-code-text-color);
+        font-size: $type-size-7;
+        font-weight: bold;
+        line-height: 1.5;
+        border-bottom: 1px solid var(--global-border-color);
+        text-decoration: none;
+
+        &:hover {
+          color: #000;
+          background: var(--global-link-color-hover);
+        }
+      }
+
+      > li:last-child a {
         border-bottom: none;
       }
-    }
 
-    li ul > li a {
-      padding-left: 2rem;
-      font-weight: normal;
-    }
+      li ul > li a {
+        padding-left: 2rem;
+        font-weight: normal;
+      }
 
-    /* hide sub sub links on small screens*/
-    li > ul li {
-      display: none;
+      li > ul li {
+        display: none;
 
-      @include breakpoint($medium) {
-        display: block;
+        @include breakpoint($medium) {
+          display: block;
+        }
       }
     }
   }
