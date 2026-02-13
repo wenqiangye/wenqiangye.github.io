@@ -165,6 +165,9 @@
     position: relative;
     min-width: 250px;
     background: var(--global-bg-color);
+    display: flex;
+    align-items: center;
+    width: 100%;
 
     a {
       display: block;

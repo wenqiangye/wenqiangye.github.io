@@ -107,6 +107,9 @@ body {
   max-width: 1280px;
   width: 100%;
   box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 /* 暗色主题导航栏 */
