@@ -79,7 +79,6 @@
       cursor: pointer;
       color: var(--global-text-color);
 
-      /* 小屏显示汉堡菜单 */
       @include breakpoint($medium) {
         display: block;
         position: absolute;
@@ -123,21 +122,15 @@
         }
       }
 
-      /* 展开菜单 */
       &.open {
         display: block;
       }
     }
 
-    /* 响应式控制 - 小屏隐藏横排菜单 */
+    /* 响应式控制 */
     @include breakpoint($medium) {
       .visible-links {
-        display: none;  // 小屏时隐藏横排菜单
-      }
-
-      /* 小屏时显示折叠菜单 */
-      .hidden-links {
-        display: block;
+        display: none; // 小屏隐藏横排菜单
       }
     }
   }
