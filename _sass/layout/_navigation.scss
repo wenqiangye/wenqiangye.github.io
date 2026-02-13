@@ -192,15 +192,19 @@
     }
 
     .visible-links {
-      display: table;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem; // 控制菜单之间间距
+      padding: 0;
+      margin: 0;
+      list-style: none;
 
       li {
-        display: table-cell;
-        vertical-align: middle;
+        display: block;
 
         &:first-child {
           font-weight: bold;
-          text-wrap: wrap;
+          margin-right: auto; // 关键：把后面菜单推到右侧
 
           a {
             margin-left: 0;
@@ -234,17 +238,12 @@
           height: 4px;
           background: var(--global-border-color);
           width: 100%;
-          -webkit-transition: $global-transition;
           transition: $global-transition;
-          -webkit-transform: scaleX(0);
-          -ms-transform: scaleX(0);
-          transform: scaleX(0); /* hide*/
+          transform: scaleX(0);
         }
 
         &:hover:before {
-          -webkit-transform: scaleX(1);
-          -ms-transform: scaleX(1);
-          transform: scaleX(1); /* reveal*/
+          transform: scaleX(1);
         }
       }
     }
