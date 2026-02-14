@@ -63,9 +63,8 @@
   }
 }
 
-/* 汉堡按钮 - 手机显示 */
+/* 汉堡按钮 - jQuery 插件控制 */
 .greedy-nav > button {
-  display: block;
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -75,9 +74,25 @@
   margin-left: auto;
   z-index: 20;
   flex-shrink: 0;
+  transition: all 0.3s ease;
 
-  @include breakpoint($medium) {
+  &.hidden {
     display: none;
+  }
+
+  &.close .navicon {
+    &::before {
+      transform: translateY(0.5rem) rotate(45deg);
+      box-shadow: none;
+    }
+
+    &::after {
+      transform: translateY(-0.5rem) rotate(-45deg);
+    }
+  }
+
+  &:hover {
+    color: var(--global-masthead-link-color-hover);
   }
 
   .navicon {
@@ -106,24 +121,9 @@
       bottom: 0;
     }
   }
-
-  &.is-active .navicon {
-    &::before {
-      transform: translateY(0.5rem) rotate(45deg);
-      box-shadow: none;
-    }
-
-    &::after {
-      transform: translateY(-0.5rem) rotate(-45deg);
-    }
-  }
-
-  &:hover {
-    color: var(--global-masthead-link-color-hover);
-  }
 }
 
-/* 横排菜单 - 桌面显示 */
+/* 横排菜单 */
 .visible-links {
   display: flex;
   align-items: center;
@@ -132,15 +132,10 @@
   list-style: none;
   margin: 0;
   padding: 0;
-
-  @include breakpoint($medium) {
-    display: none !important;
-  }
 }
 
-/* 隐藏菜单 - 手机折叠显示 */
+/* 隐藏菜单 - jQuery 插件控制 */
 .hidden-links {
-  display: none;
   position: absolute;
   top: 100%;
   left: 0;
@@ -156,10 +151,8 @@
   max-height: 80vh;
   overflow-y: auto;
 
-  @include breakpoint($medium) {
-    &.open {
-      display: block;
-    }
+  &.hidden {
+    display: none;
   }
 
   li {
