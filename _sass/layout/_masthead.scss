@@ -59,7 +59,7 @@
 
 .masthead__menu-item {
   background-color: var(--global-bg-color);
-  display: block;
+  display: inline-block;
   list-style-type: none;
   white-space: nowrap;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
