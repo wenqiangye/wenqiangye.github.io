@@ -30,7 +30,7 @@
   &__inner-wrap {
     @include container;
     @include clearfix;
-    padding: 0.5em 1em;
+    padding: 0.8em 1.5em;
     font-family: $sans-serif-narrow;
 
     @include breakpoint($x-large) {
@@ -39,6 +39,9 @@
 
     nav {
       z-index: 10;
+      display: flex;
+      align-items: center;
+      width: 100%;
     }
 
     a {
@@ -57,20 +60,156 @@
   }
 }
 
+/* 汉堡按钮 - 手机显示 */
+.greedy-nav > button {
+  display: block;
+  background: none;
+  border: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: var(--global-text-color);
+  padding: 0.5rem 0.75rem;
+  margin-left: auto;
+  z-index: 20;
+  transition: all 0.3s ease;
+
+  @include breakpoint($medium) {
+    display: none;
+  }
+
+  .navicon {
+    display: inline-block;
+    position: relative;
+    width: 1.5rem;
+    height: 1.2rem;
+
+    &::before,
+    &::after {
+      content: "";
+      position: absolute;
+      width: 100%;
+      height: 2px;
+      background: currentColor;
+      left: 0;
+      transition: all 0.3s ease;
+    }
+
+    &::before {
+      top: 0;
+      box-shadow: 0 0.5rem 0 currentColor;
+    }
+
+    &::after {
+      bottom: 0;
+    }
+  }
+
+  /* 汉堡按钮动画 - 变成叉号 */
+  &.is-active .navicon {
+    &::before {
+      transform: translateY(0.5rem) rotate(45deg);
+      box-shadow: none;
+    }
+
+    &::after {
+      transform: translateY(-0.5rem) rotate(-45deg);
+    }
+  }
+
+  &:hover {
+    color: var(--global-masthead-link-color-hover);
+  }
+}
+
+/* 横排菜单 - 桌面显示 */
+.visible-links {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex: 1;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  @include breakpoint($medium) {
+    display: none;
+  }
+}
+
+/* 隐藏菜单 - 手机折叠显示 */
+.hidden-links {
+  display: none;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  background: var(--global-bg-color);
+  border-bottom: 1px solid var(--global-border-color);
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  z-index: 15;
+  width: 100%;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+  @include breakpoint($medium) {
+    &.open {
+      display: block;
+    }
+  }
+
+  li {
+    border-bottom: 1px solid var(--global-border-color);
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  a {
+    display: block;
+    padding: 1rem 1.5rem;
+    color: var(--global-masthead-link-color);
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+
+    &:hover {
+      background: var(--global-border-color);
+      color: var(--global-masthead-link-color-hover);
+      padding-left: 2rem;
+    }
+  }
+}
+
 .masthead__menu-item {
   background-color: var(--global-bg-color);
   display: inline-block;
   list-style-type: none;
   white-space: nowrap;
   transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  font-size: 0.95rem;
+  margin: 0 0.25rem;
 
   &--lg {
-    padding-right: 2em;
+    padding-right: 1.5em;
+    padding-left: 0;
     font-weight: 600;
+    font-size: 1rem;
+    margin-right: 0.5rem;
   }
 
   a {
+    display: block;
+    padding: 0.6rem 0.8rem;
     transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    color: var(--global-masthead-link-color);
+    border-radius: 4px;
+    position: relative;
+
+    &:hover {
+      color: var(--global-masthead-link-color-hover);
+      background: rgba(52, 152, 219, 0.08);
+    }
   }
 }
 
@@ -85,4 +224,16 @@
 .masthead__menu-item.selected a:hover {
   color: #3498db;
   border-bottom: 3px solid #3498db;
+  background: transparent;
+}
+
+/* 主题切换按钮 */
+.masthead__menu-item.tail a {
+  padding: 0.6rem 0.5rem;
+  font-size: 1.2rem;
+
+  &:hover {
+    background: transparent;
+    transform: rotate(20deg);
+  }
 }
