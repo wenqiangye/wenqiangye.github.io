@@ -12,7 +12,7 @@
   }
 
   /* =====================================================
-   Greedy Nav - 横排桌面 + 小屏折叠
+   Greedy Nav - 纯横排导航栏（移除折叠功能）
    ===================================================== */
   .greedy-nav {
     position: relative;
@@ -23,7 +23,7 @@
     background: var(--global-bg-color);
     padding: 0 1rem;
 
-    /* 可见横排菜单 - 桌面显示 */
+    /* 横排菜单 - 始终显示 */
     .visible-links {
       display: flex;
       align-items: center;
@@ -70,73 +70,14 @@
       }
     }
 
-    /* 汉堡按钮 - 小屏显示 */
+    /* 汉堡按钮 - 已移除，不再显示 */
     button.nav-toggle {
       display: none;
-      background: none;
-      border: none;
-      font-size: 1.5rem;
-      cursor: pointer;
-      color: var(--global-text-color);
-
-      @include breakpoint($medium) {
-        display: block;
-        position: absolute;
-        right: 0;
-        top: 0.5rem;
-        z-index: 200;
-      }
     }
 
-    /* 隐藏菜单 - 小屏折叠 */
+    /* 隐藏菜单 - 已移除，不再显示 */
     .hidden-links {
       display: none;
-      position: absolute;
-      top: 100%;
-      right: 0;
-      margin-top: 10px;
-      padding: 0.5rem 0;
-      background: var(--global-bg-color);
-      border: 1px solid var(--global-border-color);
-      border-radius: $border-radius;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
-      z-index: 150;
-
-      li {
-        display: block;
-        border-bottom: 1px solid var(--global-border-color);
-
-        &:last-child {
-          border-bottom: none;
-        }
-
-        a {
-          display: block;
-          padding: 0.75rem 1.5rem;
-          color: var(--global-masthead-link-color);
-
-          &:hover {
-            color: var(--global-masthead-link-color-hover);
-            background: var(--global-border-color);
-          }
-        }
-      }
-
-      &.open {
-        display: block;
-      }
-    }
-
-    /* 响应式控制：小屏幕隐藏横排菜单并显示折叠菜单 */
-    @include breakpoint($medium) {
-      .visible-links {
-        display: none; /* 小屏隐藏横排菜单 */
-      }
-
-      /* 小屏幕显示折叠的菜单 */
-      .hidden-links.open {
-        display: block;
-      }
     }
   }
 
@@ -245,11 +186,7 @@
       }
 
       li > ul li {
-        display: none;
-
-        @include breakpoint($medium) {
-          display: block;
-        }
+        display: block;
       }
     }
   }
