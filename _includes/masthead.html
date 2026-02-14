@@ -22,7 +22,18 @@
             <a role="button" aria-labelledby="theme-icon"><i id="theme-icon" class="fa-solid fa-sun" aria-hidden="true" title="toggle theme"></i></a>
           </li>
         </ul>
-        <ul class="hidden-links hidden"></ul>
+        <ul class="hidden-links">
+          {% for link in site.data.navigation.main %}
+            {% if link.url contains 'http' %}
+              {% assign domain = '' %}
+            {% else %}
+              {% assign domain = base_path %}
+            {% endif %}
+            <li>
+              <a href="{{ domain }}{{ link.url }}">{{ link.title }}</a>
+            </li>
+          {% endfor %}
+        </ul>
       </nav>
     </div>
   </div>
