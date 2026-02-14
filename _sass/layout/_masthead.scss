@@ -51,6 +51,7 @@
 }
 
 .masthead__menu {
+  width: 100%;
 
   ul {
     margin: 0;
@@ -62,7 +63,7 @@
 
 /* 汉堡按钮 - 手机显示 */
 .greedy-nav > button {
-  display: block;
+  display: none;
   background: none;
   border: none;
   font-size: 1.5rem;
@@ -74,7 +75,7 @@
   transition: all 0.3s ease;
 
   @include breakpoint($medium) {
-    display: none;
+    display: block;
   }
 
   .navicon {
@@ -104,7 +105,6 @@
     }
   }
 
-  /* 汉堡按钮动画 - 变成叉号 */
   &.is-active .navicon {
     &::before {
       transform: translateY(0.5rem) rotate(45deg);
