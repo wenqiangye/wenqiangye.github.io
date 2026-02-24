@@ -6,13 +6,13 @@
   @include container;
   @include clearfix;
   margin-top: 2em;
-  padding-left: 0.5em;
+  padding-left: 0;
   padding-right: 1.2em;
   animation: intro 0.3s both;
   animation-delay: 0.35s;
 
   @include breakpoint($medium) {
-    padding-left: 0.7em;
+    padding-left: 0;
     padding-right: 1.5em;
     margin-top: 2.5em;
   }
