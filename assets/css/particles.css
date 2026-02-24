@@ -776,7 +776,7 @@ button:not(.theme-toggle-btn):hover {
 @media screen and (min-width: 1024px) {
   #main {
     /* 计算：中心至左边界(640px) + sidebar宽度(250px) + sidebar右padding(24px) + content间距(10px) = 924px */
-    margin: 10px 0 auto calc(50vw - 640px + 250px + 34px);
+    margin: 30px 0 auto calc(50vw - 640px + 220px + 34px);
     width: auto;
     max-width: 1000px;
   }
@@ -786,7 +786,7 @@ button:not(.theme-toggle-btn):hover {
 @media screen and (min-width: 1280px) {
   #main {
     /* 计算：(页宽 - 限制宽度) / 2 + sidebar区域(250px + 32px padding + 10px gap) */
-    margin: 10px 0 auto calc((100vw - 1280px) / 2 + 292px);
+    margin: 30px 0 auto calc((100vw - 1280px) / 2 + 262px);
     width: auto;
     max-width: 1000px;
   }
